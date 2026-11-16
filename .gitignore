@@ -1,0 +1,15 @@
+.venv/
+.verify-env/
+__pycache__/
+*.pyc
+.pytest_cache/
+.pytest-tmp/
+.ipynb_checkpoints/
+.env
+dist/
+reports/reproduction/
+reports/model-selection/
+reports/archive/
+reports/notebook-run/
+reports/verification/runtime/
+reports/verification/clean-copy/

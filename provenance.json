@@ -1,0 +1,16 @@
+{
+  "created": "2026-11-16",
+  "dataset": "Owner-supplied historical Enverus-origin Wolfcamp CSV; owner permits reviewer access.",
+  "pipeline": "Five-family CV model selection; selected complete Random Forest pipeline with 240 trees and minimum leaf size 5.",
+  "validated_input_artifacts": [
+    {
+      "path": "data/raw/wolfcamp_wells.csv",
+      "sha256": "b46400faf9d799f278159fdf5919020fd3c656415f88854cffbbd53b7ec473ad"
+    },
+    {
+      "path": "models/model.joblib",
+      "sha256": "3018531d1e7071026ab3737f7c00631a80b8d6b3a164dad683d4f812f560bdff"
+    }
+  ],
+  "reference_environment": "Docker/Linux"
+}

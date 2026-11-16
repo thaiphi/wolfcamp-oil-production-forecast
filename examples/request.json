@@ -1,0 +1,29 @@
+{
+  "features": {
+    "First3MonthOil_BBL": 38193.0,
+    "First3MonthGas_MCF": 141348.0,
+    "First3MonthWater_BBL": 156450.0,
+    "First6MonthOil_BBL": 61280.0,
+    "First6MonthGas_MCF": 209606.0,
+    "First6MonthWater_BBL": 230187.0,
+    "LateralLength_FT": 10008.0,
+    "TVD_FT": 11993,
+    "MD_FT": 22348.0,
+    "Proppant_LBS": 27381256.0,
+    "ProppantIntensity_LBSPerFT": 2738.0,
+    "TotalWaterPumped_GAL": 22753660.0,
+    "WaterIntensity_GALPerFT": 2276.0,
+    "FracStages": 15.0,
+    "CompletionTime_DAYS": 15.0,
+    "SoakTime_DAYS": 28.0,
+    "ENVElevationKB_FT": 3210,
+    "FirstProdYear": 2020,
+    "StateProvince": "NM",
+    "County": "LEA",
+    "ENVSubPlay": "DELAWARE NORTH OIL",
+    "ENVFluidType": "UNKNOWN",
+    "ENVFracJobType": "SLICKWATER",
+    "ENVProppantType": "SAND ONLY",
+    "ENVWellboreType": "SINGLE BORE"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "family": "random_forest",
+  "params": {
+    "n_estimators": 240,
+    "min_samples_leaf": 5,
+    "max_samples": null,
+    "max_features": 0.75,
+    "max_depth": null
+  },
+  "cv_rmse_bbl": 25623.002837952412
+}

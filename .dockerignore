@@ -1,0 +1,13 @@
+.git
+.venv
+.verify-env
+dist
+reports
+notebooks
+tests
+scripts
+data
+__pycache__
+.pytest_cache
+.pytest-tmp
+*.zip

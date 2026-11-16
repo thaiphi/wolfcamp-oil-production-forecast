@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "artifacts_verified": 6,
+  "historical_holdout_metrics": {
+    "mae_bbl": 13550.69,
+    "rmse_bbl": 19532.62,
+    "r2": 0.6052
+  },
+  "retraining_matches": true,
+  "tuning_trials_verified": 6
+}

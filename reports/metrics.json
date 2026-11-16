@@ -1,0 +1,128 @@
+{
+  "model": "RandomForestRegressor",
+  "selected_family": "random_forest",
+  "best_params": {
+    "n_estimators": 240,
+    "min_samples_leaf": 5,
+    "max_samples": null,
+    "max_features": 0.75,
+    "max_depth": null
+  },
+  "model_selection": [
+    {
+      "family": "linear_regression",
+      "trials": 1,
+      "best_params": {},
+      "cv_rmse_bbl": 28897.630549733876,
+      "validation_metrics": {
+        "mae_bbl": 16584.43,
+        "rmse_bbl": 22229.64,
+        "r2": 0.4983
+      }
+    },
+    {
+      "family": "ridge",
+      "trials": 12,
+      "best_params": {
+        "alpha": 30.0
+      },
+      "cv_rmse_bbl": 26061.19019660281,
+      "validation_metrics": {
+        "mae_bbl": 16285.25,
+        "rmse_bbl": 21358.7,
+        "r2": 0.5369
+      }
+    },
+    {
+      "family": "decision_tree",
+      "trials": 12,
+      "best_params": {
+        "max_depth": 5,
+        "min_samples_leaf": 15
+      },
+      "cv_rmse_bbl": 28112.039443869235,
+      "validation_metrics": {
+        "mae_bbl": 16700.71,
+        "rmse_bbl": 23895.85,
+        "r2": 0.4203
+      }
+    },
+    {
+      "family": "random_forest",
+      "trials": 12,
+      "best_params": {
+        "n_estimators": 240,
+        "min_samples_leaf": 5,
+        "max_samples": null,
+        "max_features": 0.75,
+        "max_depth": null
+      },
+      "cv_rmse_bbl": 25623.002837952412,
+      "validation_metrics": {
+        "mae_bbl": 15144.96,
+        "rmse_bbl": 21089.47,
+        "r2": 0.5485
+      }
+    },
+    {
+      "family": "xgboost",
+      "trials": 12,
+      "best_params": {
+        "subsample": 1.0,
+        "reg_lambda": 1,
+        "reg_alpha": 10,
+        "n_estimators": 350,
+        "min_child_weight": 3,
+        "max_depth": 3,
+        "learning_rate": 0.1,
+        "colsample_bytree": 0.8
+      },
+      "cv_rmse_bbl": 25981.49495947048,
+      "validation_metrics": {
+        "mae_bbl": 15320.05,
+        "rmse_bbl": 21370.06,
+        "r2": 0.5364
+      }
+    }
+  ],
+  "trial_count": 49,
+  "fold_fit_count": 147,
+  "cv_rmse_bbl": 25623.002837952412,
+  "validation_metrics": {
+    "mae_bbl": 15144.96,
+    "rmse_bbl": 21089.47,
+    "r2": 0.5485
+  },
+  "historical_holdout_metrics": {
+    "mae_bbl": 13273.65,
+    "rmse_bbl": 19158.43,
+    "r2": 0.6202
+  },
+  "historical_holdout_recent_rate_baseline": {
+    "mae_bbl": 13255.89,
+    "rmse_bbl": 20538.31,
+    "r2": 0.5635
+  },
+  "historical_holdout_median_baseline": {
+    "mae_bbl": 25292.31,
+    "rmse_bbl": 34519.09,
+    "r2": -0.2329
+  },
+  "counts": {
+    "train": 1249,
+    "validation": 428,
+    "historical_holdout": 264,
+    "validation_fit_after_purge": 1053,
+    "final_fit_after_purge": 1500
+  },
+  "completion_masked_by_cohort": {
+    "train": 5,
+    "validation": 0,
+    "historical_holdout": 1
+  },
+  "limitations": [
+    "Previously inspected historical holdout; not independent prospective evidence.",
+    "Calendar maturity approximates reporting availability; vendor revisions unknown.",
+    "Callers must enforce the month-six input contract and study domain."
+  ]
+}

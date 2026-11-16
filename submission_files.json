@@ -1,0 +1,346 @@
+[
+  {
+    "path": ".dockerignore",
+    "sha256": "f51ca12f895effc75f6cd54df091c3f0ee000a84de4eb1f666f647c3aec2a6c1"
+  },
+  {
+    "path": ".gitattributes",
+    "sha256": "22068970e3faabdadcbb1287c83ecc054c075e77aa77e1d3826e89f4de2009af"
+  },
+  {
+    "path": ".gitignore",
+    "sha256": "9187a968933f8d7ba44fc47d2880de4892bbcf742fbb54faf97b180abea23090"
+  },
+  {
+    "path": "artifact_manifest.json",
+    "sha256": "b92619b04d80ae3f3c8e6e83201cc73987b4324d7b38225e90b32bf8dc61b598"
+  },
+  {
+    "path": "data/raw/README.md",
+    "sha256": "270a0727ec17e07fed8fb0eaf7e4afec65deb2e76a29f2efaa3188602ddde67b"
+  },
+  {
+    "path": "data/raw/wolfcamp_wells.csv",
+    "sha256": "b46400faf9d799f278159fdf5919020fd3c656415f88854cffbbd53b7ec473ad"
+  },
+  {
+    "path": "Dockerfile",
+    "sha256": "113eb4708fd967ed9b56fc1030b16435ad671c13f4dd1a5f5d1c3a85b1814085"
+  },
+  {
+    "path": "docs/docker-prediction.png",
+    "sha256": "8a976cc6cc849ff64c4512b25b57ea98bd66ce8d4db7389f7f3fdd8326e2748e"
+  },
+  {
+    "path": "examples/call_api.py",
+    "sha256": "ba15ce93fcc75a6848f7507d2d60475142c18263f0b08f02b644d7f95aa45027"
+  },
+  {
+    "path": "examples/request.json",
+    "sha256": "b00cbb43aee4656f7f8853eb61c70778bb965637d76acf2e844f2627d88c37b6"
+  },
+  {
+    "path": "examples/smoke_api.py",
+    "sha256": "c9fb07077aaa642ff6d0c5dfc403f508db5eae483dca132abd0df7a1ab65a697"
+  },
+  {
+    "path": "examples/verify_api_parity.py",
+    "sha256": "1b00f18c6089ef9a735651c9463089723e33926a752616b4ebdd91592dc4edd0"
+  },
+  {
+    "path": "models/model.joblib",
+    "sha256": "3018531d1e7071026ab3737f7c00631a80b8d6b3a164dad683d4f812f560bdff"
+  },
+  {
+    "path": "notebooks/notebook.ipynb",
+    "sha256": "057dc9265e5e5c60edf75bd4d3e9636ba55ff853dd9feaca4975562baaa72b8c"
+  },
+  {
+    "path": "notebooks/wolfcamp_midterm_submission.ipynb",
+    "sha256": "057dc9265e5e5c60edf75bd4d3e9636ba55ff853dd9feaca4975562baaa72b8c"
+  },
+  {
+    "path": "predict.py",
+    "sha256": "619f4d337bdb7f5c4aff354e56c87b27ab82467ec45bba66c4c313c24dfde073"
+  },
+  {
+    "path": "prepare_submission.py",
+    "sha256": "d28aed6c8b6099a6a5a2b1e8555ab35f03637d8cf4087e2d15baac821b45263c"
+  },
+  {
+    "path": "provenance.json",
+    "sha256": "61e31e93b022f8f04b294ad3ad11f8d77d79dd6809d17404c206482ebbcabf62"
+  },
+  {
+    "path": "pytest.ini",
+    "sha256": "b160d82f7811555051f8966d8e02750a985227c1d022208c784e606946f2eada"
+  },
+  {
+    "path": "README.md",
+    "sha256": "7abe58550ee1f7b34cc3febf630990ffbeab4d0ea95545ad0f7989619297f1bb"
+  },
+  {
+    "path": "reports/metrics.json",
+    "sha256": "27be07437565c0db93082eb859587c41754dbdcf16bf62e48dea3dac76d9ecbc"
+  },
+  {
+    "path": "reports/model_selection.csv",
+    "sha256": "58cf08d5b901035ffee93f581f774947c948c933833c4bbd173ed3ab5db9dd63"
+  },
+  {
+    "path": "reports/MODEL_SELECTION_PROTOCOL.md",
+    "sha256": "04874c2175f0979cf7fc20aaf7cae9a628c7590123fa52a41f9d8d4f13594e56"
+  },
+  {
+    "path": "reports/platform_reproducibility.json",
+    "sha256": "c0bf7a3531c6fd7ee29cff7ffcfa6d1c83a37e855e535e28f342092071b0cff0"
+  },
+  {
+    "path": "reports/selection.json",
+    "sha256": "6b693eb222f57807be252896b4c225de4f3db2067a3af356c1ebb0b8c1df68e0"
+  },
+  {
+    "path": "reports/tuning.csv",
+    "sha256": "c5b60f7c6f7d5c248705adfcf3c8e9ae3fc2033824fc58472dc796e5c5369279"
+  },
+  {
+    "path": "reports/tuning.json",
+    "sha256": "2dfe4985cd05c53c8b57e0fcd51fc89e58968e43555ff875606ae888a236ec12"
+  },
+  {
+    "path": "reports/verification/artifacts.json",
+    "sha256": "bcb76d4e77b278cf78ce230be0fb12a41c76b0cbed61a83d646cfd7c7a38ba8f"
+  },
+  {
+    "path": "reports/verification/clean_artifacts.json",
+    "sha256": "bcb76d4e77b278cf78ce230be0fb12a41c76b0cbed61a83d646cfd7c7a38ba8f"
+  },
+  {
+    "path": "reports/verification/clean_artifacts.log",
+    "sha256": "91c4ba6dcd5eba06d26a4b26e607b2eac7bffdc3413add60b5813b60731fe190"
+  },
+  {
+    "path": "reports/verification/clean_docker_api.json",
+    "sha256": "bd28a2d9cbdd8089dd7d917450194581e1225145cc6c7f695d36b4a8f53b5620"
+  },
+  {
+    "path": "reports/verification/clean_docker_api.log",
+    "sha256": "5358428c27ef7cfcf59d77c647dd0b35571b31f31874c444063d44196e3ba734"
+  },
+  {
+    "path": "reports/verification/clean_docker_build.log",
+    "sha256": "090c6dd2e0c34fae7b016c4080b7b82bceb4ae5be1fea6368844aa763c43ef9a"
+  },
+  {
+    "path": "reports/verification/clean_docker_parity.json",
+    "sha256": "c456dd7786170ce62f8f28a40a77e42b2077e4ca83f2b915807ea31c8b3160ff"
+  },
+  {
+    "path": "reports/verification/clean_docker_parity.log",
+    "sha256": "9cb77828afc409c0e1fef05f43a6150fcb984b46aeb972a10b35da0b885a9664"
+  },
+  {
+    "path": "reports/verification/clean_environment.log",
+    "sha256": "d1b64cbd72b70daf42d75608e883be850549fb63c42196de3e02adbace253134"
+  },
+  {
+    "path": "reports/verification/clean_environment_short_path.log",
+    "sha256": "ae2ac335a2f6d107ebe9f8f020fb59df0635550c6ba866c50268e239d26d2178"
+  },
+  {
+    "path": "reports/verification/clean_linux_tests.log",
+    "sha256": "e51e32509baaded7f956e0f9a3a0eb64bb906b4e149b133a57db12eb1e92590a"
+  },
+  {
+    "path": "reports/verification/clean_linux_training.log",
+    "sha256": "b7ab3a12f382bbdd511140ff5c30e1ee501304e8643a7024e0a6afb0d9e9a70c"
+  },
+  {
+    "path": "reports/verification/clean_linux_training_parity.log",
+    "sha256": "afe7313b721d10ed2562d3fd4b5c9fe98fb521e9480f8cce922b4a3f3e08afc3"
+  },
+  {
+    "path": "reports/verification/clean_notebook.log",
+    "sha256": "1aa87f1759f646c5b70b4a79bb95707925d3d2af401f71013a36472331b79ce3"
+  },
+  {
+    "path": "reports/verification/clean_tests.log",
+    "sha256": "a9eb877b2d1dc933ae5b65cf819fb85e03febee216e743e3bd8c979a7954c24d"
+  },
+  {
+    "path": "reports/verification/clean_training_parity.json",
+    "sha256": "b88dc5d14e4b15598530ba18bf7bd571f1d308e25b22fe85ada747b39c17693f"
+  },
+  {
+    "path": "reports/verification/clean_training_parity.log",
+    "sha256": "477ee3573eded55049434e7a84f587d425d0569e6c42535cdd90963b0610ae88"
+  },
+  {
+    "path": "reports/verification/clean_training_strict_failure.log",
+    "sha256": "8514acde43fac6c3541dc46007eeac0a9d501c74308287152d74a28e804053f4"
+  },
+  {
+    "path": "reports/verification/docker_api.json",
+    "sha256": "1bacbdc10b6cd81d93e5832bb3f72d7b3cd509abbc8df084572cb29a438a263f"
+  },
+  {
+    "path": "reports/verification/docker_api.log",
+    "sha256": "011bc5ea1cae6ae5c38f04cf5fe254bd0d59fc7b8f67243ccee875c0b9248313"
+  },
+  {
+    "path": "reports/verification/docker_build.log",
+    "sha256": "66b75f1892a4c0d17b6f6a24fb7913a595c6544ca466ea2388e975cbfd6f2642"
+  },
+  {
+    "path": "reports/verification/docker_internal.log",
+    "sha256": "8b83cf158b42678eb020ff94cb01caaa493f219267935c7d35cb43183043a7c2"
+  },
+  {
+    "path": "reports/verification/docker_parity.json",
+    "sha256": "c456dd7786170ce62f8f28a40a77e42b2077e4ca83f2b915807ea31c8b3160ff"
+  },
+  {
+    "path": "reports/verification/docker_parity.log",
+    "sha256": "9cb77828afc409c0e1fef05f43a6150fcb984b46aeb972a10b35da0b885a9664"
+  },
+  {
+    "path": "reports/verification/docker_test_build.log",
+    "sha256": "cfbe46824def0f7672242c2c30ae25ccbdf453a5d780e9215938660355dea9a3"
+  },
+  {
+    "path": "reports/verification/environment.log",
+    "sha256": "e16cc9b50973f582dfc082d396e5d955c865f45a9915ea28656c5a26c42ce8ce"
+  },
+  {
+    "path": "reports/verification/model_selection_environment.log",
+    "sha256": "bbd041dad61b95db4b80bc23a6424d7b1ac1398feb113995c4dac3e0ba5ab080"
+  },
+  {
+    "path": "reports/verification/model_selection_training.log",
+    "sha256": "70f82aa8598a942417bc6a3efdff85d018e302b6d1a626018ec83c90e7e53d90"
+  },
+  {
+    "path": "reports/verification/notebook.log",
+    "sha256": "8ec344cafe23f09cf8a38f42c10a34928648d5a1c60a385892087c6bb40e43f5"
+  },
+  {
+    "path": "reports/verification/notebook_inline.log",
+    "sha256": "845b0658be78e098a8705334ecae1ae2411f3dc1ee8025db688d180fa5f0b771"
+  },
+  {
+    "path": "reports/verification/notebook_preprocessing_visuals.log",
+    "sha256": "20741b184bbf67280028cfd02ab62ea68b0afbfb8bb1a5ce26fcea3707b01b2a"
+  },
+  {
+    "path": "reports/verification/package.json",
+    "sha256": "2bd49a1b109b571822dd1bdc32b9060457d7a97c861fbc800a45cfe7d34f2f62"
+  },
+  {
+    "path": "reports/verification/preprocessing_visuals.json",
+    "sha256": "5a1d4ff3405a2d6304ee27236243c1dfb57408d4fb8b80c9a825325948c61e78"
+  },
+  {
+    "path": "reports/verification/summary.json",
+    "sha256": "aea3edd17a11d380e57618b7ff75516b493595e561933e18e93a810751492054"
+  },
+  {
+    "path": "reports/verification/tests.log",
+    "sha256": "234031421c085a5778c994906b026aaa9df420fc33774951a7d431b9842accb8"
+  },
+  {
+    "path": "reports/verification/training.log",
+    "sha256": "70f82aa8598a942417bc6a3efdff85d018e302b6d1a626018ec83c90e7e53d90"
+  },
+  {
+    "path": "reports/verification/windows_training_parity.json",
+    "sha256": "29857926ed885b47da0eddfd06f5994a55aaf149ad941c808198a72ec114d821"
+  },
+  {
+    "path": "reports/verification/windows_training_parity.log",
+    "sha256": "7bd9697e4dd27c2a47a90ae20e0d8c11ce9909cb8de2a3754c0cf1f363b29c40"
+  },
+  {
+    "path": "requirements-dev.txt",
+    "sha256": "d6a094d483928a7bfcb35f584c914503651af1234c598d8cc6dedc3396f0f136"
+  },
+  {
+    "path": "requirements.txt",
+    "sha256": "8b57a12ac33ea9a986b07d621e13d1073960470ac20513642c269844253368e0"
+  },
+  {
+    "path": "scripts/build_notebook.py",
+    "sha256": "edbe826664b370f02064de14bef0436748f53222620da1383ad27a0989314beb"
+  },
+  {
+    "path": "scripts/Dockerfile.tests",
+    "sha256": "597675387d0188bb750627883f5aec8b890c1b2a7d9e05616f0367da44a8b454"
+  },
+  {
+    "path": "scripts/freeze_artifacts.py",
+    "sha256": "7eb1709d60754fa7f5871b6976b9a56678f75d6438c25c49ad4998e97c1cba6f"
+  },
+  {
+    "path": "scripts/verify_notebook.py",
+    "sha256": "39f2ca44a2614d6c8340ad32c51dfb9353d34cdff5d7f1cbd71a8f17456ca0f9"
+  },
+  {
+    "path": "scripts/verify_package.py",
+    "sha256": "f160166da15dd246e25db6eb3e7654df9a7fa77884a75929466cf5aa981bd970"
+  },
+  {
+    "path": "src/wolfcamp/__init__.py",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "src/wolfcamp/data.py",
+    "sha256": "4b0d9fdb86869e1e512143e9622a4639e7a3fccb39f81ec5d01ec8cff3c3ad05"
+  },
+  {
+    "path": "src/wolfcamp/features.py",
+    "sha256": "fc83302fcdda8ced9f51ed27e60b1d12abbb667251ba020f5f100886bc60271b"
+  },
+  {
+    "path": "src/wolfcamp/modeling.py",
+    "sha256": "1bfa8857a5a546852e9e47783e5bb65eadfc63647a9bb5bbe561205dfd495705"
+  },
+  {
+    "path": "src/wolfcamp/study.py",
+    "sha256": "2633cabf439c4c9711d8d1bc16ba4556013cf3ddc80963c672463db0f0baeb56"
+  },
+  {
+    "path": "src/wolfcamp/training.py",
+    "sha256": "04c81b8681ef4f8e5d926bc696012717d12e12a88c576eee6368a64b6db58a42"
+  },
+  {
+    "path": "SUBMISSION.md",
+    "sha256": "2676b51ea76b16f66f0e117948f743575eb4ba32ba31e189244f68cdfcbacb07"
+  },
+  {
+    "path": "tests/test_api.py",
+    "sha256": "e8e59d084d538b0ecaa0f26a12335f20d77403c471c390ef72ebbfffe3238023"
+  },
+  {
+    "path": "tests/test_baseline.py",
+    "sha256": "e8cd02065150a0b9c6fa5b794a85e57a687d6b57f9c223e978b65a89c87fa677"
+  },
+  {
+    "path": "tests/test_notebook.py",
+    "sha256": "20a3b565d8e430b4ac6fcef01a3572bdaa4f882cd1ed398449fd890c5be53214"
+  },
+  {
+    "path": "tests/test_training.py",
+    "sha256": "d161245b4c87aa34599e9ca226ad10446c721a20fb682527b555a49b65a1ec29"
+  },
+  {
+    "path": "train.py",
+    "sha256": "946c18642293d6d707bf72eed0a6e57bdd5281df39828c7ee65f278c6274c04c"
+  },
+  {
+    "path": "VERIFICATION.md",
+    "sha256": "68cd57e3508456d726d10123860953324052a7fa2fddcd3eb459a498695bd80d"
+  },
+  {
+    "path": "verify_project.py",
+    "sha256": "14c947e29aeebc3b53035347155db74822ab5a9bbccfa5a7e7f7ed58abadcb42"
+  }
+]

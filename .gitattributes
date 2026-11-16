@@ -1,0 +1,12 @@
+* text=auto eol=lf
+data/raw/wolfcamp_wells.csv -text
+models/model.joblib binary
+notebooks/notebook.ipynb -text
+notebooks/wolfcamp_midterm_submission.ipynb -text
+reports/metrics.json -text
+reports/tuning.json -text
+reports/tuning.csv -text
+reports/model_selection.csv -text
+reports/selection.json -text
+reports/MODEL_SELECTION_PROTOCOL.md -text
+reports/platform_reproducibility.json -text

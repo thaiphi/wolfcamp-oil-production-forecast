@@ -1,0 +1,55 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 503B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#2 DONE 0.2s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 149B done
+#3 DONE 0.0s
+
+#4 [1/8] FROM docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#4 resolve docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 5.42MB 0.3s done
+#5 DONE 0.3s
+
+#6 [2/8] WORKDIR /app
+#6 CACHED
+
+#7 [3/8] RUN apt-get update && apt-get install -y --no-install-recommends libgomp1     && rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [4/8] COPY requirements.txt .
+#8 CACHED
+
+#9 [5/8] RUN pip install --no-cache-dir -r requirements.txt
+#9 CACHED
+
+#10 [6/8] COPY src ./src
+#10 DONE 0.1s
+
+#11 [7/8] COPY predict.py .
+#11 DONE 0.1s
+
+#12 [8/8] COPY models/model.joblib ./models/model.joblib
+#12 DONE 0.1s
+
+#13 exporting to image
+#13 exporting layers
+#13 exporting layers 0.3s done
+#13 exporting manifest sha256:3d2012c08846ca3e636d055f7c625c080c8b02b7a4ecb68136ad10f5257707f8 0.0s done
+#13 exporting config sha256:25262b2ead7eb36441e1a14adfa18c3a08079a026af19fe2b80f75b9239cda3c 0.0s done
+#13 exporting attestation manifest sha256:c0c7bc6e429012f9a078678992dc6e12c3d1fd89979756c2e9696337497c867a 0.0s done
+#13 exporting manifest list sha256:532d68d45d6c6ae7b8e171417c25d1daee1d6448b6bb90b3fb6a4a9946f2c7a0 0.0s done
+#13 naming to docker.io/library/wolfcamp-midterm-submission:latest
+#13 naming to docker.io/library/wolfcamp-midterm-submission:latest done
+#13 unpacking to docker.io/library/wolfcamp-midterm-submission:latest 0.1s done
+#13 DONE 0.6s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/233t4chf7llpotw2fa9eszskx

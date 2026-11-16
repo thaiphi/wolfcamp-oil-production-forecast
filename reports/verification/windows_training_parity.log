@@ -1,0 +1,302 @@
+{
+  "status": "PASS_WITH_PLATFORM_DIFFERENCES",
+  "artifacts_verified": 10,
+  "historical_holdout_metrics": {
+    "mae_bbl": 13273.65,
+    "rmse_bbl": 19158.43,
+    "r2": 0.6202
+  },
+  "retraining_matches": true,
+  "tuning_trials_verified": 49,
+  "all_trial_scores_match_within_0_01_bbl": false,
+  "nonselected_platform_differences": [
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 0.8,
+        "reg_lambda": 100,
+        "reg_alpha": 10,
+        "n_estimators": 100,
+        "min_child_weight": 3,
+        "max_depth": 3,
+        "learning_rate": 0.05,
+        "colsample_bytree": 1.0
+      },
+      "packaged_fold_rmse_bbl": [
+        29949.049029151327,
+        30828.630968626836,
+        24756.520344039403
+      ],
+      "rerun_fold_rmse_bbl": [
+        29947.514072258327,
+        30703.846574650444,
+        24802.1615158477
+      ],
+      "max_absolute_difference_bbl": 124.78439397639158
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 1.0,
+        "reg_lambda": 40,
+        "reg_alpha": 10,
+        "n_estimators": 350,
+        "min_child_weight": 3,
+        "max_depth": 4,
+        "learning_rate": 0.025,
+        "colsample_bytree": 0.65
+      },
+      "packaged_fold_rmse_bbl": [
+        26723.596367155395,
+        28465.712599320592,
+        24955.838557048715
+      ],
+      "rerun_fold_rmse_bbl": [
+        27035.280697967723,
+        28177.294262373765,
+        24548.489492993787
+      ],
+      "max_absolute_difference_bbl": 407.349064054928
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 1.0,
+        "reg_lambda": 1,
+        "reg_alpha": 10,
+        "n_estimators": 350,
+        "min_child_weight": 3,
+        "max_depth": 3,
+        "learning_rate": 0.1,
+        "colsample_bytree": 0.8
+      },
+      "packaged_fold_rmse_bbl": [
+        25564.940036953714,
+        26710.170150256457,
+        25669.37469120127
+      ],
+      "rerun_fold_rmse_bbl": [
+        25455.68326375309,
+        27158.891579958687,
+        27266.691320386126
+      ],
+      "max_absolute_difference_bbl": 1597.3166291848574
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 0.8,
+        "reg_lambda": 40,
+        "reg_alpha": 0,
+        "n_estimators": 100,
+        "min_child_weight": 1,
+        "max_depth": 3,
+        "learning_rate": 0.1,
+        "colsample_bytree": 0.8
+      },
+      "packaged_fold_rmse_bbl": [
+        26451.908871499825,
+        27863.110821196875,
+        24574.262939291213
+      ],
+      "rerun_fold_rmse_bbl": [
+        26754.52450682612,
+        28075.63931887263,
+        25087.39668827806
+      ],
+      "max_absolute_difference_bbl": 513.1337489868456
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 0.8,
+        "reg_lambda": 100,
+        "reg_alpha": 0,
+        "n_estimators": 100,
+        "min_child_weight": 8,
+        "max_depth": 4,
+        "learning_rate": 0.1,
+        "colsample_bytree": 0.8
+      },
+      "packaged_fold_rmse_bbl": [
+        28051.447026333124,
+        28935.737941273142,
+        24610.77663475835
+      ],
+      "rerun_fold_rmse_bbl": [
+        28237.85428252012,
+        28963.131867065997,
+        24514.13814754242
+      ],
+      "max_absolute_difference_bbl": 186.40725618699435
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 0.8,
+        "reg_lambda": 1,
+        "reg_alpha": 0,
+        "n_estimators": 100,
+        "min_child_weight": 3,
+        "max_depth": 3,
+        "learning_rate": 0.025,
+        "colsample_bytree": 1.0
+      },
+      "packaged_fold_rmse_bbl": [
+        26023.189230076063,
+        27596.068894066153,
+        24423.927676085565
+      ],
+      "rerun_fold_rmse_bbl": [
+        25970.982075839613,
+        27700.992068707736,
+        24526.496377153137
+      ],
+      "max_absolute_difference_bbl": 104.92317464158259
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 0.8,
+        "reg_lambda": 100,
+        "reg_alpha": 10,
+        "n_estimators": 100,
+        "min_child_weight": 3,
+        "max_depth": 3,
+        "learning_rate": 0.025,
+        "colsample_bytree": 0.65
+      },
+      "packaged_fold_rmse_bbl": [
+        32786.8336495513,
+        33284.36063920847,
+        25913.832527682192
+      ],
+      "rerun_fold_rmse_bbl": [
+        32969.064938316886,
+        33292.091970985326,
+        25856.979736393387
+      ],
+      "max_absolute_difference_bbl": 182.2312887655862
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 0.8,
+        "reg_lambda": 100,
+        "reg_alpha": 10,
+        "n_estimators": 350,
+        "min_child_weight": 3,
+        "max_depth": 3,
+        "learning_rate": 0.05,
+        "colsample_bytree": 0.8
+      },
+      "packaged_fold_rmse_bbl": [
+        26893.111848854114,
+        28232.23035791859,
+        24784.012157134424
+      ],
+      "rerun_fold_rmse_bbl": [
+        26956.4077347277,
+        28277.84648708657,
+        24597.194258283325
+      ],
+      "max_absolute_difference_bbl": 186.81789885109902
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 0.8,
+        "reg_lambda": 100,
+        "reg_alpha": 10,
+        "n_estimators": 200,
+        "min_child_weight": 1,
+        "max_depth": 4,
+        "learning_rate": 0.1,
+        "colsample_bytree": 0.8
+      },
+      "packaged_fold_rmse_bbl": [
+        26749.70625960437,
+        28426.692026899138,
+        25280.842751467506
+      ],
+      "rerun_fold_rmse_bbl": [
+        27001.13125430517,
+        28358.128678187964,
+        25437.316712920743
+      ],
+      "max_absolute_difference_bbl": 251.42499470080293
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 0.65,
+        "reg_lambda": 40,
+        "reg_alpha": 0,
+        "n_estimators": 100,
+        "min_child_weight": 8,
+        "max_depth": 3,
+        "learning_rate": 0.1,
+        "colsample_bytree": 1.0
+      },
+      "packaged_fold_rmse_bbl": [
+        27146.945215812033,
+        28175.36520019331,
+        24216.799319731752
+      ],
+      "rerun_fold_rmse_bbl": [
+        26892.639271268203,
+        28008.97544595832,
+        24389.999922028896
+      ],
+      "max_absolute_difference_bbl": 254.30594454383026
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 1.0,
+        "reg_lambda": 10,
+        "reg_alpha": 10,
+        "n_estimators": 200,
+        "min_child_weight": 1,
+        "max_depth": 4,
+        "learning_rate": 0.05,
+        "colsample_bytree": 0.65
+      },
+      "packaged_fold_rmse_bbl": [
+        25952.49835820857,
+        27160.489663714907,
+        25114.73322879485
+      ],
+      "rerun_fold_rmse_bbl": [
+        25816.5789328687,
+        27343.74520303082,
+        24924.53251574548
+      ],
+      "max_absolute_difference_bbl": 190.20071304936937
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "subsample": 0.8,
+        "reg_lambda": 1,
+        "reg_alpha": 1,
+        "n_estimators": 100,
+        "min_child_weight": 3,
+        "max_depth": 4,
+        "learning_rate": 0.025,
+        "colsample_bytree": 0.65
+      },
+      "packaged_fold_rmse_bbl": [
+        25858.576950062277,
+        27549.78072476954,
+        24689.383023304872
+      ],
+      "rerun_fold_rmse_bbl": [
+        26071.009318045646,
+        27584.502552377544,
+        24447.981174120145
+      ],
+      "max_absolute_difference_bbl": 241.40184918472733
+    }
+  ]
+}

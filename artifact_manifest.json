@@ -1,0 +1,46 @@
+[
+  {
+    "path": "data/raw/wolfcamp_wells.csv",
+    "sha256": "b46400faf9d799f278159fdf5919020fd3c656415f88854cffbbd53b7ec473ad"
+  },
+  {
+    "path": "models/model.joblib",
+    "sha256": "3018531d1e7071026ab3737f7c00631a80b8d6b3a164dad683d4f812f560bdff"
+  },
+  {
+    "path": "notebooks/notebook.ipynb",
+    "sha256": "057dc9265e5e5c60edf75bd4d3e9636ba55ff853dd9feaca4975562baaa72b8c"
+  },
+  {
+    "path": "notebooks/wolfcamp_midterm_submission.ipynb",
+    "sha256": "057dc9265e5e5c60edf75bd4d3e9636ba55ff853dd9feaca4975562baaa72b8c"
+  },
+  {
+    "path": "reports/metrics.json",
+    "sha256": "27be07437565c0db93082eb859587c41754dbdcf16bf62e48dea3dac76d9ecbc"
+  },
+  {
+    "path": "reports/tuning.json",
+    "sha256": "2dfe4985cd05c53c8b57e0fcd51fc89e58968e43555ff875606ae888a236ec12"
+  },
+  {
+    "path": "reports/tuning.csv",
+    "sha256": "c5b60f7c6f7d5c248705adfcf3c8e9ae3fc2033824fc58472dc796e5c5369279"
+  },
+  {
+    "path": "reports/model_selection.csv",
+    "sha256": "58cf08d5b901035ffee93f581f774947c948c933833c4bbd173ed3ab5db9dd63"
+  },
+  {
+    "path": "reports/selection.json",
+    "sha256": "6b693eb222f57807be252896b4c225de4f3db2067a3af356c1ebb0b8c1df68e0"
+  },
+  {
+    "path": "reports/MODEL_SELECTION_PROTOCOL.md",
+    "sha256": "04874c2175f0979cf7fc20aaf7cae9a628c7590123fa52a41f9d8d4f13594e56"
+  },
+  {
+    "path": "reports/platform_reproducibility.json",
+    "sha256": "c0bf7a3531c6fd7ee29cff7ffcfa6d1c83a37e855e535e28f342092071b0cff0"
+  }
+]

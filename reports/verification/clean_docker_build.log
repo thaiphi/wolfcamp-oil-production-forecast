@@ -1,0 +1,54 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 503B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 149B done
+#3 DONE 0.0s
+
+#4 [1/8] FROM docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#4 resolve docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 5.39MB 0.3s done
+#5 DONE 0.3s
+
+#6 [4/8] COPY requirements.txt .
+#6 CACHED
+
+#7 [2/8] WORKDIR /app
+#7 CACHED
+
+#8 [3/8] RUN apt-get update && apt-get install -y --no-install-recommends libgomp1     && rm -rf /var/lib/apt/lists/*
+#8 CACHED
+
+#9 [5/8] RUN pip install --no-cache-dir -r requirements.txt
+#9 CACHED
+
+#10 [6/8] COPY src ./src
+#10 DONE 0.1s
+
+#11 [7/8] COPY predict.py .
+#11 DONE 0.1s
+
+#12 [8/8] COPY models/model.joblib ./models/model.joblib
+#12 DONE 0.1s
+
+#13 exporting to image
+#13 exporting layers
+#13 exporting layers 0.3s done
+#13 exporting manifest sha256:1c59b960b3bee68c84a0ded9ec7879bd95f86eb8e3984c59e6c7aa2a31a7d4f4 0.0s done
+#13 exporting config sha256:f071b0eef20e2e374dbf0d8ddde28cf78f57087a9d8d313e6e296c1888152dd7 0.0s done
+#13 exporting attestation manifest sha256:b4127eddc30baa9086f2bc7777ef8b92134804280276ba0445ce60169e3a0f50 0.0s done
+#13 exporting manifest list sha256:54a9bb85a3ed27eb7a24d397f62943f84d840b6a184e7a22f910e3e6966d8964 0.0s done
+#13 naming to docker.io/library/wolfcamp-submission-release:latest done
+#13 unpacking to docker.io/library/wolfcamp-submission-release:latest 0.1s done
+#13 DONE 0.5s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/tpduogblbgsy2xwvsjidbl4p4

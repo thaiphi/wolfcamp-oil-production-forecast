@@ -1,0 +1,186 @@
+{
+  "base_url": "http://127.0.0.1:8007",
+  "checks": [
+    {
+      "name": "health",
+      "status": 200,
+      "response": {
+        "status": "ok"
+      }
+    },
+    {
+      "name": "features",
+      "status": 200,
+      "response": {
+        "required": [
+          "First6MonthOil_BBL"
+        ],
+        "allowed": [
+          "First3MonthOil_BBL",
+          "First3MonthGas_MCF",
+          "First3MonthWater_BBL",
+          "First6MonthOil_BBL",
+          "First6MonthGas_MCF",
+          "First6MonthWater_BBL",
+          "LateralLength_FT",
+          "TVD_FT",
+          "MD_FT",
+          "Proppant_LBS",
+          "ProppantIntensity_LBSPerFT",
+          "TotalWaterPumped_GAL",
+          "WaterIntensity_GALPerFT",
+          "FracStages",
+          "CompletionTime_DAYS",
+          "SoakTime_DAYS",
+          "ENVElevationKB_FT",
+          "FirstProdYear",
+          "StateProvince",
+          "County",
+          "ENVSubPlay",
+          "ENVFluidType",
+          "ENVFracJobType",
+          "ENVProppantType",
+          "ENVWellboreType"
+        ],
+        "prediction_point": "after 6 months of production",
+        "units": "oil barrels (BBL)",
+        "input_contract": "Caller must provide a month-six snapshot. Omit completion attributes when their date is unknown or later than month six. Dates and vendor revisions cannot be verified by this API.",
+        "study_domain": "TVD 7000-15000 ft; lateral 4000-16000 ft. Partial snapshots are supported but applicability is caller-verified."
+      }
+    },
+    {
+      "name": "openapi",
+      "status": 200,
+      "response": {
+        "title": "Wolfcamp Oil Production Forecast"
+      }
+    },
+    {
+      "name": "example",
+      "status": 200,
+      "response": {
+        "predicted_months_7_to_12_oil_bbl": 56052.42,
+        "predicted_12_month_cumulative_oil_bbl": 117332.42,
+        "actual_first_6_month_oil_bbl": 61280.0
+      }
+    },
+    {
+      "name": "minimal",
+      "status": 200,
+      "response": {
+        "predicted_months_7_to_12_oil_bbl": 45065.86,
+        "predicted_12_month_cumulative_oil_bbl": 46065.86,
+        "actual_first_6_month_oil_bbl": 1000.0
+      }
+    },
+    {
+      "name": "null_optional",
+      "status": 200,
+      "response": {
+        "predicted_months_7_to_12_oil_bbl": 45065.86,
+        "predicted_12_month_cumulative_oil_bbl": 46065.86,
+        "actual_first_6_month_oil_bbl": 1000.0
+      }
+    },
+    {
+      "name": "missing_required",
+      "status": 422,
+      "response": {
+        "detail": "First6MonthOil_BBL is required as a non-negative number"
+      }
+    },
+    {
+      "name": "negative",
+      "status": 422,
+      "response": {
+        "detail": "First6MonthOil_BBL is required as a non-negative number"
+      }
+    },
+    {
+      "name": "boolean",
+      "status": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "float_type",
+            "loc": [
+              "body",
+              "features",
+              "First6MonthOil_BBL",
+              "float"
+            ],
+            "msg": "Input should be a valid number",
+            "input": true
+          },
+          {
+            "type": "int_type",
+            "loc": [
+              "body",
+              "features",
+              "First6MonthOil_BBL",
+              "int"
+            ],
+            "msg": "Input should be a valid integer",
+            "input": true
+          },
+          {
+            "type": "string_type",
+            "loc": [
+              "body",
+              "features",
+              "First6MonthOil_BBL",
+              "str"
+            ],
+            "msg": "Input should be a valid string",
+            "input": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "numeric_string",
+      "status": 422,
+      "response": {
+        "detail": "First6MonthOil_BBL is required as a non-negative number"
+      }
+    },
+    {
+      "name": "future",
+      "status": 422,
+      "response": {
+        "detail": "Future or unknown features not allowed: ['First12MonthOil_BBL']"
+      }
+    },
+    {
+      "name": "unknown",
+      "status": 422,
+      "response": {
+        "detail": "Future or unknown features not allowed: ['unknown']"
+      }
+    },
+    {
+      "name": "wrong_category",
+      "status": 422,
+      "response": {
+        "detail": "County must be a string or null"
+      }
+    },
+    {
+      "name": "extra_envelope",
+      "status": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "extra_forbidden",
+            "loc": [
+              "body",
+              "unknown"
+            ],
+            "msg": "Extra inputs are not permitted",
+            "input": 1
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "artifacts_verified": 11,
+  "historical_holdout_metrics": {
+    "mae_bbl": 13273.65,
+    "rmse_bbl": 19158.43,
+    "r2": 0.6202
+  }
+}

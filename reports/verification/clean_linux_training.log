@@ -1,0 +1,177 @@
+linear_regression {} CV RMSE 28897.63
+ridge {'alpha': 0.01} CV RMSE 28820.38
+ridge {'alpha': 0.03} CV RMSE 28672.34
+ridge {'alpha': 0.1} CV RMSE 28281.98
+ridge {'alpha': 0.3} CV RMSE 27668.94
+ridge {'alpha': 1.0} CV RMSE 26904.77
+ridge {'alpha': 3.0} CV RMSE 26429.7
+ridge {'alpha': 10.0} CV RMSE 26142.4
+ridge {'alpha': 30.0} CV RMSE 26061.19
+ridge {'alpha': 100.0} CV RMSE 26260.87
+ridge {'alpha': 300.0} CV RMSE 26948.03
+ridge {'alpha': 1000.0} CV RMSE 28873.25
+ridge {'alpha': 3000.0} CV RMSE 31776.09
+decision_tree {'max_depth': 3, 'min_samples_leaf': 2} CV RMSE 31335.85
+decision_tree {'max_depth': 3, 'min_samples_leaf': 5} CV RMSE 29506.63
+decision_tree {'max_depth': 3, 'min_samples_leaf': 15} CV RMSE 28211.38
+decision_tree {'max_depth': 5, 'min_samples_leaf': 2} CV RMSE 35093.98
+decision_tree {'max_depth': 5, 'min_samples_leaf': 5} CV RMSE 29988.79
+decision_tree {'max_depth': 5, 'min_samples_leaf': 15} CV RMSE 28112.04
+decision_tree {'max_depth': 8, 'min_samples_leaf': 2} CV RMSE 32544.72
+decision_tree {'max_depth': 8, 'min_samples_leaf': 5} CV RMSE 30358.16
+decision_tree {'max_depth': 8, 'min_samples_leaf': 15} CV RMSE 28230.39
+decision_tree {'max_depth': 12, 'min_samples_leaf': 2} CV RMSE 35737.85
+decision_tree {'max_depth': 12, 'min_samples_leaf': 5} CV RMSE 30434.25
+decision_tree {'max_depth': 12, 'min_samples_leaf': 15} CV RMSE 28224.79
+random_forest {'n_estimators': 160, 'max_depth': 5, 'min_samples_leaf': 2, 'max_features': 0.75, 'max_samples': 0.7} CV RMSE 25880.87
+random_forest {'n_estimators': 160, 'max_depth': 5, 'min_samples_leaf': 5, 'max_features': 0.75, 'max_samples': 0.7} CV RMSE 25742.35
+random_forest {'n_estimators': 160, 'max_depth': 8, 'min_samples_leaf': 2, 'max_features': 0.75, 'max_samples': 0.7} CV RMSE 25687.52
+random_forest {'n_estimators': 160, 'max_depth': 8, 'min_samples_leaf': 5, 'max_features': 0.75, 'max_samples': 0.7} CV RMSE 25712.8
+random_forest {'n_estimators': 160, 'max_depth': 12, 'min_samples_leaf': 2, 'max_features': 0.75, 'max_samples': 0.7} CV RMSE 25777.07
+random_forest {'n_estimators': 160, 'max_depth': 12, 'min_samples_leaf': 5, 'max_features': 0.75, 'max_samples': 0.7} CV RMSE 25731.45
+random_forest {'n_estimators': 160, 'min_samples_leaf': 2, 'max_samples': None, 'max_features': 1.0, 'max_depth': None} CV RMSE 26150.3
+random_forest {'n_estimators': 120, 'min_samples_leaf': 2, 'max_samples': 0.7, 'max_features': 1.0, 'max_depth': 5} CV RMSE 25999.68
+random_forest {'n_estimators': 120, 'min_samples_leaf': 1, 'max_samples': 0.7, 'max_features': 1.0, 'max_depth': 8} CV RMSE 26459.65
+random_forest {'n_estimators': 120, 'min_samples_leaf': 5, 'max_samples': None, 'max_features': 0.5, 'max_depth': 5} CV RMSE 25865.79
+random_forest {'n_estimators': 240, 'min_samples_leaf': 5, 'max_samples': None, 'max_features': 0.75, 'max_depth': None} CV RMSE 25623.0
+random_forest {'n_estimators': 240, 'min_samples_leaf': 10, 'max_samples': 0.9, 'max_features': 0.75, 'max_depth': 12} CV RMSE 26083.94
+xgboost {'subsample': 0.8, 'reg_lambda': 100, 'reg_alpha': 10, 'n_estimators': 100, 'min_child_weight': 3, 'max_depth': 3, 'learning_rate': 0.05, 'colsample_bytree': 1.0} CV RMSE 28511.4
+xgboost {'subsample': 1.0, 'reg_lambda': 40, 'reg_alpha': 10, 'n_estimators': 350, 'min_child_weight': 3, 'max_depth': 4, 'learning_rate': 0.025, 'colsample_bytree': 0.65} CV RMSE 26715.05
+xgboost {'subsample': 1.0, 'reg_lambda': 1, 'reg_alpha': 10, 'n_estimators': 350, 'min_child_weight': 3, 'max_depth': 3, 'learning_rate': 0.1, 'colsample_bytree': 0.8} CV RMSE 25981.49
+xgboost {'subsample': 0.8, 'reg_lambda': 40, 'reg_alpha': 0, 'n_estimators': 100, 'min_child_weight': 1, 'max_depth': 3, 'learning_rate': 0.1, 'colsample_bytree': 0.8} CV RMSE 26296.43
+xgboost {'subsample': 0.8, 'reg_lambda': 100, 'reg_alpha': 0, 'n_estimators': 100, 'min_child_weight': 8, 'max_depth': 4, 'learning_rate': 0.1, 'colsample_bytree': 0.8} CV RMSE 27199.32
+xgboost {'subsample': 0.8, 'reg_lambda': 1, 'reg_alpha': 0, 'n_estimators': 100, 'min_child_weight': 3, 'max_depth': 3, 'learning_rate': 0.025, 'colsample_bytree': 1.0} CV RMSE 26014.4
+xgboost {'subsample': 0.8, 'reg_lambda': 100, 'reg_alpha': 10, 'n_estimators': 100, 'min_child_weight': 3, 'max_depth': 3, 'learning_rate': 0.025, 'colsample_bytree': 0.65} CV RMSE 30661.68
+xgboost {'subsample': 0.8, 'reg_lambda': 100, 'reg_alpha': 10, 'n_estimators': 350, 'min_child_weight': 3, 'max_depth': 3, 'learning_rate': 0.05, 'colsample_bytree': 0.8} CV RMSE 26636.45
+xgboost {'subsample': 0.8, 'reg_lambda': 100, 'reg_alpha': 10, 'n_estimators': 200, 'min_child_weight': 1, 'max_depth': 4, 'learning_rate': 0.1, 'colsample_bytree': 0.8} CV RMSE 26819.08
+xgboost {'subsample': 0.65, 'reg_lambda': 40, 'reg_alpha': 0, 'n_estimators': 100, 'min_child_weight': 8, 'max_depth': 3, 'learning_rate': 0.1, 'colsample_bytree': 1.0} CV RMSE 26513.04
+xgboost {'subsample': 1.0, 'reg_lambda': 10, 'reg_alpha': 10, 'n_estimators': 200, 'min_child_weight': 1, 'max_depth': 4, 'learning_rate': 0.05, 'colsample_bytree': 0.65} CV RMSE 26075.91
+xgboost {'subsample': 0.8, 'reg_lambda': 1, 'reg_alpha': 1, 'n_estimators': 100, 'min_child_weight': 3, 'max_depth': 4, 'learning_rate': 0.025, 'colsample_bytree': 0.65} CV RMSE 26032.58
+{
+  "model": "RandomForestRegressor",
+  "selected_family": "random_forest",
+  "best_params": {
+    "n_estimators": 240,
+    "min_samples_leaf": 5,
+    "max_samples": null,
+    "max_features": 0.75,
+    "max_depth": null
+  },
+  "model_selection": [
+    {
+      "family": "linear_regression",
+      "trials": 1,
+      "best_params": {},
+      "cv_rmse_bbl": 28897.630549733876,
+      "validation_metrics": {
+        "mae_bbl": 16584.43,
+        "rmse_bbl": 22229.64,
+        "r2": 0.4983
+      }
+    },
+    {
+      "family": "ridge",
+      "trials": 12,
+      "best_params": {
+        "alpha": 30.0
+      },
+      "cv_rmse_bbl": 26061.19019660281,
+      "validation_metrics": {
+        "mae_bbl": 16285.25,
+        "rmse_bbl": 21358.7,
+        "r2": 0.5369
+      }
+    },
+    {
+      "family": "decision_tree",
+      "trials": 12,
+      "best_params": {
+        "max_depth": 5,
+        "min_samples_leaf": 15
+      },
+      "cv_rmse_bbl": 28112.039443869235,
+      "validation_metrics": {
+        "mae_bbl": 16700.71,
+        "rmse_bbl": 23895.85,
+        "r2": 0.4203
+      }
+    },
+    {
+      "family": "random_forest",
+      "trials": 12,
+      "best_params": {
+        "n_estimators": 240,
+        "min_samples_leaf": 5,
+        "max_samples": null,
+        "max_features": 0.75,
+        "max_depth": null
+      },
+      "cv_rmse_bbl": 25623.002837952412,
+      "validation_metrics": {
+        "mae_bbl": 15144.96,
+        "rmse_bbl": 21089.47,
+        "r2": 0.5485
+      }
+    },
+    {
+      "family": "xgboost",
+      "trials": 12,
+      "best_params": {
+        "subsample": 1.0,
+        "reg_lambda": 1,
+        "reg_alpha": 10,
+        "n_estimators": 350,
+        "min_child_weight": 3,
+        "max_depth": 3,
+        "learning_rate": 0.1,
+        "colsample_bytree": 0.8
+      },
+      "cv_rmse_bbl": 25981.49495947048,
+      "validation_metrics": {
+        "mae_bbl": 15320.05,
+        "rmse_bbl": 21370.06,
+        "r2": 0.5364
+      }
+    }
+  ],
+  "trial_count": 49,
+  "fold_fit_count": 147,
+  "cv_rmse_bbl": 25623.002837952412,
+  "validation_metrics": {
+    "mae_bbl": 15144.96,
+    "rmse_bbl": 21089.47,
+    "r2": 0.5485
+  },
+  "historical_holdout_metrics": {
+    "mae_bbl": 13273.65,
+    "rmse_bbl": 19158.43,
+    "r2": 0.6202
+  },
+  "historical_holdout_recent_rate_baseline": {
+    "mae_bbl": 13255.89,
+    "rmse_bbl": 20538.31,
+    "r2": 0.5635
+  },
+  "historical_holdout_median_baseline": {
+    "mae_bbl": 25292.31,
+    "rmse_bbl": 34519.09,
+    "r2": -0.2329
+  },
+  "counts": {
+    "train": 1249,
+    "validation": 428,
+    "historical_holdout": 264,
+    "validation_fit_after_purge": 1053,
+    "final_fit_after_purge": 1500
+  },
+  "completion_masked_by_cohort": {
+    "train": 5,
+    "validation": 0,
+    "historical_holdout": 1
+  },
+  "limitations": [
+    "Previously inspected historical holdout; not independent prospective evidence.",
+    "Calendar maturity approximates reporting availability; vendor revisions unknown.",
+    "Callers must enforce the month-six input contract and study domain."
+  ]
+}

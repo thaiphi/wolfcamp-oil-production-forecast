@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\thai.phi\Downloads\python\portfolio\practicum\wolfcamp-midterm-submission\verify_project.py", line 67, in <module>
+    text=json.dumps(verify(args.rerun,args.allow_platform_differences),indent=2)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\thai.phi\Downloads\python\portfolio\practicum\wolfcamp-midterm-submission\verify_project.py", line 48, in verify
+    raise ValueError('Trial fold scores differ: '+a['family']+' '+json.dumps(a['params']))
+ValueError: Trial fold scores differ: xgboost {"subsample": 0.8, "reg_lambda": 100, "reg_alpha": 10, "n_estimators": 100, "min_child_weight": 3, "max_depth": 3, "learning_rate": 0.05, "colsample_bytree": 1.0}

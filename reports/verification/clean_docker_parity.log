@@ -1,0 +1,32 @@
+[
+  {
+    "case": 0,
+    "artifact": 56052.42,
+    "api": 56052.42,
+    "match": true
+  },
+  {
+    "case": 1,
+    "artifact": 45065.86,
+    "api": 45065.86,
+    "match": true
+  },
+  {
+    "case": 2,
+    "artifact": 56052.42,
+    "api": 56052.42,
+    "match": true
+  },
+  {
+    "case": 3,
+    "artifact": 104989.3,
+    "api": 104989.3,
+    "match": true
+  },
+  {
+    "case": 4,
+    "artifact": 56089.89,
+    "api": 56089.89,
+    "match": true
+  }
+]

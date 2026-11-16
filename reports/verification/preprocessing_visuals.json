@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "training_cohort": "2014\u201318; 1249 wells",
+  "total_notebook_figures": 9,
+  "new_preprocessing_figures": 5,
+  "original_notebooks_preserved": [
+    {
+      "path": "Practicum.ipynb",
+      "sha256": "8f6104c629c30ba8aa2d2f2574b8bc3ca3d01ba5d02e716e1175e2da4fe02095",
+      "unchanged": true
+    },
+    {
+      "path": "Copy of Practicum.ipynb",
+      "sha256": "31bc72712cde5cbd0600e2632111db75d0b93884f2ce8fe71a25b15f47c45809",
+      "unchanged": true
+    },
+    {
+      "path": "mean target encoding.ipynb",
+      "sha256": "7eccb6f40456f489bdf3749da811e7b3233d675e094c59dd77eb6a24f58ca5ee",
+      "unchanged": true
+    },
+    {
+      "path": "12 months prediction",
+      "sha256": "16c883e685349c53d706da04bd5c2ab3a5c8fa4c4350124898d1f999894666f4",
+      "unchanged": true
+    },
+    {
+      "path": "Copy of 36 months prediction",
+      "sha256": "79c7444706747fb392dfdde5fb701e4884261b6fd91158723e2e1ae1fcc3b128",
+      "unchanged": true
+    }
+  ],
+  "unchanged_core_artifacts": [
+    {
+      "path": "data/raw/wolfcamp_wells.csv",
+      "sha256": "b46400faf9d799f278159fdf5919020fd3c656415f88854cffbbd53b7ec473ad",
+      "unchanged": true
+    },
+    {
+      "path": "models/model.joblib",
+      "sha256": "3018531d1e7071026ab3737f7c00631a80b8d6b3a164dad683d4f812f560bdff",
+      "unchanged": true
+    },
+    {
+      "path": "reports/metrics.json",
+      "sha256": "27be07437565c0db93082eb859587c41754dbdcf16bf62e48dea3dac76d9ecbc",
+      "unchanged": true
+    },
+    {
+      "path": "reports/tuning.json",
+      "sha256": "2dfe4985cd05c53c8b57e0fcd51fc89e58968e43555ff875606ae888a236ec12",
+      "unchanged": true
+    },
+    {
+      "path": "reports/tuning.csv",
+      "sha256": "c5b60f7c6f7d5c248705adfcf3c8e9ae3fc2033824fc58472dc796e5c5369279",
+      "unchanged": true
+    },
+    {
+      "path": "reports/model_selection.csv",
+      "sha256": "58cf08d5b901035ffee93f581f774947c948c933833c4bbd173ed3ab5db9dd63",
+      "unchanged": true
+    },
+    {
+      "path": "reports/selection.json",
+      "sha256": "6b693eb222f57807be252896b4c225de4f3db2067a3af356c1ebb0b8c1df68e0",
+      "unchanged": true
+    },
+    {
+      "path": "reports/MODEL_SELECTION_PROTOCOL.md",
+      "sha256": "04874c2175f0979cf7fc20aaf7cae9a628c7590123fa52a41f9d8d4f13594e56",
+      "unchanged": true
+    },
+    {
+      "path": "reports/platform_reproducibility.json",
+      "sha256": "c0bf7a3531c6fd7ee29cff7ffcfa6d1c83a37e855e535e28f342092071b0cff0",
+      "unchanged": true
+    }
+  ],
+  "model_data_and_scores_unchanged": true,
+  "visually_inspected": [
+    "Missingness matrix and percentage bins",
+    "Observed-value correlation heatmap",
+    "Observed versus median-filled distributions",
+    "Before/after StandardScaler histograms",
+    "One-hot encoding matrix"
+  ],
+  "adapted_source_patterns": [
+    {
+      "source": "Practicum.ipynb",
+      "cells": [
+        11,
+        30
+      ],
+      "patterns": [
+        "missingness heatmap",
+        "correlation heatmap"
+      ]
+    },
+    {
+      "source": "Copy of Practicum.ipynb",
+      "cells": [
+        20
+      ],
+      "patterns": [
+        "missingness percentage bins"
+      ]
+    },
+    {
+      "source": "Copy of 36 months prediction",
+      "cells": [
+        12
+      ],
+      "patterns": [
+        "before/after normalization histogram grids"
+      ]
+    }
+  ],
+  "interpretation": "Figures use current training data and fitted transforms. They do not establish unknown-value imputation accuracy. No extra feature or row filter was introduced."
+}
