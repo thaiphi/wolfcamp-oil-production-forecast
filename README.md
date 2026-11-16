@@ -4,6 +4,33 @@ An end-to-end **ML Zoomcamp midterm** project predicting oil production during m
 
 Start with the **[current executed submission notebook](notebooks/wolfcamp_midterm_submission.ipynb)**. It follows the complete workflow: problem → data exploration → preprocessing → training and tuning → evaluation → saved pipeline → API → Docker. Section 6 shows separate executable tuning sections and trial outputs for all five model families. `notebook.ipynb` is a synchronized copy of this same notebook.
 
+## End-to-end workflow
+
+```mermaid
+flowchart TD
+    A["Problem: predict months 7–12 oil production<br/>using information available after month six"]
+    B["Historical well data<br/>Clean records and enforce month-six availability"]
+    C["Data exploration<br/>Target distribution, missingness and feature relationships"]
+    D["Chronological split and purged training folds<br/>Training: 2014–18 · Validation: 2019 · Holdout: 2020–21"]
+    E["Preprocessing fitted within each training fold<br/>Feature engineering · Median/mode imputation<br/>Missingness indicators · Scaling · One-hot encoding"]
+    F["Train and tune five model families<br/>Linear regression · Ridge · Decision Tree<br/>Random Forest · XGBoost"]
+    G["Select by training cross-validation RMSE<br/>Random Forest selected · 2019 validation diagnostics"]
+    H["Refit selected pipeline on label-mature 2014–19 wells<br/>Evaluate historical holdout: RMSE, MAE and R²<br/>Compare with recent-rate and median benchmarks"]
+    I["Save complete fitted pipeline<br/>models/model.joblib"]
+    J["FastAPI prediction service<br/>Validate month-six inputs and load saved pipeline"]
+    K["Docker container<br/>Same preprocessing and model at inference"]
+    L["Render Free cloud deployment<br/>Public API and Swagger prediction page"]
+    M["Verification<br/>HTTP checks and saved-model prediction parity"]
+
+    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K --> L --> M
+```
+
+At prediction time: **month-six well inputs → API validation → saved preprocessing
+and Random Forest → predicted months 7–12 oil (BBL) → add observed six-month oil
+for cumulative first-year oil**. The deployed service loads the saved pipeline;
+training and tuning happen offline. The historical holdout was inspected during
+development and is not fresh prospective evidence.
+
 ## Data and problem
 
 For ML reviewers unfamiliar with oil data: a **well** is an individual drilled production site. **Cumulative** production is a running total; the **incremental** target is the additional oil in months 7–12. A **month-six snapshot** contains information available after the first six months.
