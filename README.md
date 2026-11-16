@@ -6,6 +6,21 @@ Start with the **[current executed submission notebook](notebooks/wolfcamp_midte
 
 ## Data and problem
 
+For ML reviewers unfamiliar with oil data: a **well** is an individual drilled production site. **Cumulative** production is a running total; the **incremental** target is the additional oil in months 7–12. A **month-six snapshot** contains information available after the first six months.
+
+| Field / term | Plain-language meaning |
+|---|---|
+| BBL | Liquid barrels; one barrel is 42 U.S. gallons. Oil BBL is the target unit. |
+| MCF | One thousand cubic feet, used for natural-gas input volumes. |
+| FT / LBS / GAL / DAYS | Feet / pounds / U.S. gallons / days. |
+| Lateral length | Length of the horizontal producing section of the well. |
+| TVD / MD | Depth straight down / distance along the drilled well path. |
+| Completion attributes | Recorded operations and materials used to prepare a drilled well for production. |
+| Proppant | Particles such as sand used to keep created rock fractures open; recorded here by mass. |
+| Frac stages | Separately treated intervals during hydraulic fracturing, which creates flow paths in the surrounding rock. |
+
+References: [EIA barrel definition](https://www.eia.gov/tools/glossary/index.php?id=b), [EIA gas units](https://www.eia.gov/tools/faqs/faq.php?id=1417&t=7), and SLB definitions of [depth](https://glossary.slb.com/terms/t/true_vertical_depth), [completion](https://glossary.slb.com/terms/c/completion) and [proppant](https://glossary.slb.com/terms/p/proppant).
+
 The included [CSV](data/raw/wolfcamp_wells.csv) contains 2,105 completion records and 252 fields from a historical Wolfcamp/Delaware Basin well export. The owner confirmed permission to share the data; reviewers need no credentials. [Data provenance](data/raw/README.md).
 
 Target: `First12MonthOil_BBL - First6MonthOil_BBL`. Future production fields are excluded from predictors. One valid record per well is retained; the study requires TVD 7,000–15,000 ft, lateral 4,000–16,000 ft and at least twelve producing months. TVD is a proxy for producing depth. Completion covariates with missing dates or dates after month six are masked.
@@ -31,6 +46,8 @@ Train **ordinary linear regression, Ridge, Decision Tree, Random Forest and XGBo
 **Selection is based only on mean training-CV RMSE**, so Random Forest wins this declared search. These are the reference **Docker/Linux** results. Windows selected the same forest and reproduced its metrics/predictions, but XGBoost's scores differed (Windows CV 26,028.29; validation 20,449.73 BBL). [Both observed runs and differences](reports/platform_reproducibility.json) are preserved. Equal trial counts are not exhaustive optimization or equal compute. No model is claimed universally best.
 
 The selected forest uses **240 trees, minimum leaf size 5, unrestricted depth, max_features 0.75 and full-size bootstrap samples**, with seed 42. It is refit on 1,500 label-mature 2014–19 wells. Only that selected specification receives a historical holdout score in this run.
+
+The **training-median benchmark** predicts the final fitting cohort's median future-oil volume for every holdout well. The **recent-rate benchmark** predicts `scale × 2 × max(0, oil_6mo − oil_3mo)`: twice the latest three-month oil volume, adjusted by a nonnegative scale fitted by least squares on the permitted fitting cohort. Neither benchmark learns from holdout labels.
 
 | Historical holdout metric | Random Forest | Recent-rate benchmark | Training-median benchmark |
 |---|---:|---:|---:|
@@ -64,10 +81,10 @@ The notebook and published tuning reports were executed in Docker/Linux. There, 
 
 On Windows, extract the project to a short directory such as `C:\projects\wolfcamp` before creating `.venv`. Very deeply nested paths can prevent compiled scikit-learn modules from importing even when installation succeeds.
 
-For local serving without Docker:
+For local serving without Docker, use the same project's environment:
 
-```text
-python -m uvicorn predict:app --host 127.0.0.1 --port 8000
+```powershell
+.\.venv\Scripts\python.exe -m uvicorn predict:app --host 127.0.0.1 --port 8000
 ```
 
 ## Docker and prediction API
@@ -77,16 +94,16 @@ docker build -t wolfcamp-midterm-submission .
 docker run --rm -p 127.0.0.1:8000:8000 wolfcamp-midterm-submission
 ```
 
-Open `http://127.0.0.1:8000/docs`. In a second terminal:
+Open `http://127.0.0.1:8000/docs`. In a second terminal, run these commands from the same project directory. On Linux/macOS use `.venv/bin/python` in place of `.\.venv\Scripts\python.exe`; activation is not required with either explicit path.
 
 Reviewer evidence: [actual Docker API request and HTTP 200 prediction](docs/docker-prediction.png).
 
 ![Docker API prediction](docs/docker-prediction.png)
 
-```text
-python examples/call_api.py
-python examples/smoke_api.py --url http://127.0.0.1:8000
-python examples/verify_api_parity.py --url http://127.0.0.1:8000
+```powershell
+.\.venv\Scripts\python.exe examples/call_api.py
+.\.venv\Scripts\python.exe examples/smoke_api.py --url http://127.0.0.1:8000
+.\.venv\Scripts\python.exe examples/verify_api_parity.py --url http://127.0.0.1:8000
 ```
 
 `GET /health` checks the model, `GET /features` describes allowed inputs, and `POST /predict` returns incremental and cumulative oil forecasts. A minimal request is:

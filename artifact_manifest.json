@@ -9,11 +9,11 @@
   },
   {
     "path": "notebooks/notebook.ipynb",
-    "sha256": "42d5138a9786285f63eadc466791ce220a2e42987c27dd426de7680aa00d0be2"
+    "sha256": "bc6530eed31895d378624b3f204dbbaa11558b8eddff5ae3b982287dbf1e6d3d"
   },
   {
     "path": "notebooks/wolfcamp_midterm_submission.ipynb",
-    "sha256": "42d5138a9786285f63eadc466791ce220a2e42987c27dd426de7680aa00d0be2"
+    "sha256": "bc6530eed31895d378624b3f204dbbaa11558b8eddff5ae3b982287dbf1e6d3d"
   },
   {
     "path": "reports/metrics.json",

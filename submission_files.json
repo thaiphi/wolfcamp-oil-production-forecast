@@ -13,7 +13,7 @@
   },
   {
     "path": "artifact_manifest.json",
-    "sha256": "47f477070b77cbc832a3d68bd64c0df830539d92503e3cdd541445b42af73777"
+    "sha256": "c05ded26b34b7e3ea26ba4b1571d6d18865766406c3121806f25473ffe9ad649"
   },
   {
     "path": "data/raw/README.md",
@@ -53,11 +53,11 @@
   },
   {
     "path": "notebooks/notebook.ipynb",
-    "sha256": "42d5138a9786285f63eadc466791ce220a2e42987c27dd426de7680aa00d0be2"
+    "sha256": "bc6530eed31895d378624b3f204dbbaa11558b8eddff5ae3b982287dbf1e6d3d"
   },
   {
     "path": "notebooks/wolfcamp_midterm_submission.ipynb",
-    "sha256": "42d5138a9786285f63eadc466791ce220a2e42987c27dd426de7680aa00d0be2"
+    "sha256": "bc6530eed31895d378624b3f204dbbaa11558b8eddff5ae3b982287dbf1e6d3d"
   },
   {
     "path": "predict.py",
@@ -77,7 +77,7 @@
   },
   {
     "path": "README.md",
-    "sha256": "b330230efeadb90c460a77cbea143a6185ba8a614772dc465f1d1c1c20d01818"
+    "sha256": "faf6d368aaa8c180484029df9c89bc18b999f2ec94f01456667355620f328454"
   },
   {
     "path": "reports/metrics.json",
@@ -212,6 +212,10 @@
     "sha256": "e16cc9b50973f582dfc082d396e5d955c865f45a9915ea28656c5a26c42ce8ce"
   },
   {
+    "path": "reports/verification/independent_review.json",
+    "sha256": "8e9410607da7a8867179d15779801ef14e7cea8ac7890c496f22a97edb074ad4"
+  },
+  {
     "path": "reports/verification/model_selection_environment.log",
     "sha256": "bbd041dad61b95db4b80bc23a6424d7b1ac1398feb113995c4dac3e0ba5ab080"
   },
@@ -245,7 +249,7 @@
   },
   {
     "path": "reports/verification/tests.log",
-    "sha256": "a97865afa6af9a82d4669dd2712d2051f354ecf26a7a3768fae2e909b584431e"
+    "sha256": "637fd7847a7c2f3c2d4c7aebb5a17153799f2fe9fd766b8f19c10defd566ff31"
   },
   {
     "path": "reports/verification/training.log",
@@ -269,7 +273,7 @@
   },
   {
     "path": "scripts/build_notebook.py",
-    "sha256": "5eb4a7185380d7913cd0db1d3c0e73c67b0d426d0daa8bdea5bf0fc18155c353"
+    "sha256": "0d4486ebf2a6f79a437e5353d4697bd5150e1695e2aac447991335c4712e73b7"
   },
   {
     "path": "scripts/Dockerfile.tests",

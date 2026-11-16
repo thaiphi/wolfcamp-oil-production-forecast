@@ -25,7 +25,25 @@ def main():
 This notebook loads the shared data, explores the training cohort, demonstrates preprocessing, trains linear and tree-based regressors, tunes their parameters, selects and evaluates a final model, exports its complete pipeline, and calls the prediction API. The accompanying Dockerfile runs the same saved pipeline.''')
     md('''## 1. Setup and source data
 
-Run with Python 3.12 and `requirements-dev.txt`. All paths are relative to this project. The included CSV has 2,105 completion records and 252 fields; the owner confirmed permission to share it for reviewer access. No credentials or external download are required. See `data/raw/README.md` for provenance.''')
+Run with Python 3.12 and `requirements-dev.txt`. All paths are relative to this project. The included CSV has 2,105 completion records and 252 fields; the owner confirmed permission to share it for reviewer access. No credentials or external download are required. See `data/raw/README.md` for provenance.
+
+### Reading the oil-data fields
+
+No petroleum background is required to follow the modeling. A **well** is an individual drilled production site; the cleaned dataset contains one record per `WellID`. A **month-six snapshot** contains measurements available after its first six months. **Cumulative** production is the total over the stated period; **incremental** production is the additional volume in the future interval being predicted.
+
+| Field or term | Meaning for this project |
+|---|---|
+| BBL | Barrels, a liquid-volume unit; one barrel is 42 U.S. gallons. The prediction target is oil BBL. |
+| MCF | One thousand cubic feet, the volume unit for natural-gas predictors. Gas is a separate input; the target remains oil volume. |
+| FT / LBS / GAL / DAYS | Feet, pounds, U.S. gallons and days; suffixes indicate each field's recorded units. |
+| `LateralLength_FT` | Length of the well's horizontal producing section. |
+| `TVD_FT` | True vertical depth: depth measured straight down from a surface reference. |
+| `MD_FT` | Measured depth: distance along the drilled well path, including its turns. |
+| Completion attributes | Recorded operations and materials used to prepare a drilled well for production. |
+| `Proppant_LBS` | Mass of particles, such as sand, used to keep created rock fractures open. |
+| `FracStages` | Count of separately treated intervals during hydraulic fracturing, which creates flow paths in the surrounding rock. |
+
+Terminology references: [EIA liquid-volume units](https://www.eia.gov/tools/glossary/index.php?id=b), [EIA natural-gas units](https://www.eia.gov/tools/faqs/faq.php?id=1417&t=7), [SLB depth definitions](https://glossary.slb.com/terms/t/true_vertical_depth), [completion](https://glossary.slb.com/terms/c/completion) and [proppant](https://glossary.slb.com/terms/p/proppant). These definitions explain feature labels; the project evaluates predictions rather than the causal effects of well-construction choices.''')
     code('''from pathlib import Path
 import sys, json, joblib
 import numpy as np
@@ -378,7 +396,9 @@ display(pd.DataFrame(best['folds']))''')
 
 Fit the tuned pipeline on the purged 2014–18 data and report 2019 validation performance. Then refit that fixed specification on the purged 2014–19 data, leaving 2020–21 for the final historical evaluation.
 
-**Evidence limit:** this 2020–21 cohort was inspected during prior development. It is a reused historical holdout, not fresh independent prospective evidence. The scores below describe the fitted artifact and this specific evaluation protocol.''')
+**Evidence limit:** this 2020–21 cohort was inspected during prior development. It is a reused historical holdout, not fresh independent prospective evidence. The scores below describe the fitted artifact and this specific evaluation protocol.
+
+**Benchmarks.** The training-median forecast is the median target in the final fitting cohort, used as the prediction for every holdout well. The recent-rate forecast is `scale × 2 × max(0, oil_6mo − oil_3mo)`. Twice the latest three-month oil volume projects that recent rate over the next six months; a nonnegative scale is fitted by least squares using only the permitted final fitting cohort. Neither the scale nor the median uses holdout labels.''')
     code('''fit_valid=purged_fit(train,valid)
 validation_model=make_pipeline(best['params'],family=best['family']).fit(*get_xy(fit_valid))
 Xv,yv=get_xy(valid)
@@ -445,18 +465,18 @@ assert client.post('/predict',json={'features':{'First6MonthOil_BBL':1000,'First
 print('API prediction parity and future-field rejection: PASS')''')
     md('''## 10. Run in Docker and reproduce
 
-From the project root:
-```text
-python train.py --output reports/reproduction
-python verify_project.py --rerun reports/reproduction --allow-platform-differences
-python -m pytest -q
+In PowerShell from the project root, use the explicit environment interpreter below. On Linux/macOS replace `.\\.venv\\Scripts\\python.exe` with `.venv/bin/python`. This also works in a fresh terminal without activation.
+```powershell
+.\\.venv\\Scripts\\python.exe train.py --output reports/reproduction
+.\\.venv\\Scripts\\python.exe verify_project.py --rerun reports/reproduction --allow-platform-differences
+.\\.venv\\Scripts\\python.exe -m pytest -q
 docker build -t wolfcamp-midterm-submission .
 docker run --rm -p 127.0.0.1:8000:8000 wolfcamp-midterm-submission
 ```
-In another terminal:
-```text
-python examples/smoke_api.py --url http://127.0.0.1:8000
-python examples/verify_api_parity.py --url http://127.0.0.1:8000
+In another terminal in the same project directory:
+```powershell
+.\\.venv\\Scripts\\python.exe examples/smoke_api.py --url http://127.0.0.1:8000
+.\\.venv\\Scripts\\python.exe examples/verify_api_parity.py --url http://127.0.0.1:8000
 ```
 Open `http://127.0.0.1:8000/docs`. The runtime image includes the saved model, source and pinned dependencies. In the reference Docker/Linux environment, full-search verification also passes without the platform-differences flag. Windows reruns report nonselected XGBoost differences explicitly while keeping selected-pipeline checks strict. Local Docker verification and clean-copy checks are documented in `VERIFICATION.md`.
 
