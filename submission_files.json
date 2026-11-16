@@ -13,7 +13,7 @@
   },
   {
     "path": "artifact_manifest.json",
-    "sha256": "b92619b04d80ae3f3c8e6e83201cc73987b4324d7b38225e90b32bf8dc61b598"
+    "sha256": "47f477070b77cbc832a3d68bd64c0df830539d92503e3cdd541445b42af73777"
   },
   {
     "path": "data/raw/README.md",
@@ -53,11 +53,11 @@
   },
   {
     "path": "notebooks/notebook.ipynb",
-    "sha256": "057dc9265e5e5c60edf75bd4d3e9636ba55ff853dd9feaca4975562baaa72b8c"
+    "sha256": "42d5138a9786285f63eadc466791ce220a2e42987c27dd426de7680aa00d0be2"
   },
   {
     "path": "notebooks/wolfcamp_midterm_submission.ipynb",
-    "sha256": "057dc9265e5e5c60edf75bd4d3e9636ba55ff853dd9feaca4975562baaa72b8c"
+    "sha256": "42d5138a9786285f63eadc466791ce220a2e42987c27dd426de7680aa00d0be2"
   },
   {
     "path": "predict.py",
@@ -77,7 +77,7 @@
   },
   {
     "path": "README.md",
-    "sha256": "7abe58550ee1f7b34cc3febf630990ffbeab4d0ea95545ad0f7989619297f1bb"
+    "sha256": "b330230efeadb90c460a77cbea143a6185ba8a614772dc465f1d1c1c20d01818"
   },
   {
     "path": "reports/metrics.json",
@@ -245,7 +245,7 @@
   },
   {
     "path": "reports/verification/tests.log",
-    "sha256": "234031421c085a5778c994906b026aaa9df420fc33774951a7d431b9842accb8"
+    "sha256": "a97865afa6af9a82d4669dd2712d2051f354ecf26a7a3768fae2e909b584431e"
   },
   {
     "path": "reports/verification/training.log",
@@ -269,7 +269,7 @@
   },
   {
     "path": "scripts/build_notebook.py",
-    "sha256": "edbe826664b370f02064de14bef0436748f53222620da1383ad27a0989314beb"
+    "sha256": "5eb4a7185380d7913cd0db1d3c0e73c67b0d426d0daa8bdea5bf0fc18155c353"
   },
   {
     "path": "scripts/Dockerfile.tests",

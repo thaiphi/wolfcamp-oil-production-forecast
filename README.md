@@ -1,6 +1,6 @@
 # Wolfcamp oil production forecasting
 
-An end-to-end **ML Zoomcamp midterm** project predicting incremental oil production during months 7–12 from a well's month-six snapshot. The forecast provides an independent production expectation for engineering review. Add observed six-month oil to obtain cumulative first-year oil. Units are oil BBL.
+An end-to-end **ML Zoomcamp midterm** project predicting oil production during months 7–12 from measurements available after a well's first six months. This supervised regression project tests whether machine learning improves future-oil estimates over simple forecasting benchmarks. Add observed six-month oil to the predicted increment to obtain cumulative first-year oil. Units are oil barrels (BBL).
 
 Start with the **[current executed submission notebook](notebooks/wolfcamp_midterm_submission.ipynb)**. It follows the complete workflow: problem → data exploration → preprocessing → training and tuning → evaluation → saved pipeline → API → Docker. Section 6 shows separate executable tuning sections and trial outputs for all five model families. `notebook.ipynb` is a synchronized copy of this same notebook.
 
@@ -38,7 +38,9 @@ The selected forest uses **240 trees, minimum leaf size 5, unrestricted depth, m
 | MAE, BBL | 13,273.65 | 13,255.89 | 25,292.31 |
 | R² | 0.6202 | 0.5635 | -0.2329 |
 
-The forest has lower RMSE than the recent-rate benchmark; that benchmark has lower MAE. These answer different questions about larger misses and typical absolute errors. **The historical holdout was previously inspected during development; it is not fresh independent prospective evidence.** Regional coverage, missing completion fields, approximate maturity and unknown vendor revisions constrain deployment. Callers must enforce the month-six snapshot and study domain; prospective evaluation is needed before operational use.
+The forest reduces RMSE by **6.72% versus the recent-rate benchmark** and **44.50% versus the training-median benchmark**. Its MAE is 17.76 BBL higher than the recent-rate benchmark, so the benefit is in squared error rather than a consistent advantage on every metric. Its largest impurity importances are recent months 4–6 oil and total six-month oil; these describe predictive use, not causal effects.
+
+**The historical holdout was previously inspected during development; it is not fresh independent prospective evidence.** Only 17 of the 264 holdout wells are from 2021. Regional/domain restrictions, 90.6% training missingness in FracStages, approximate calendar maturity and unknown source revisions limit generalization. The service gives point forecasts without calibrated uncertainty intervals. The notebook's conclusion, limitations and next steps explain how those limits affect interpretation and set out later-cohort validation, data-quality checks, subgroup error analysis and selection-stability work. Callers must enforce the month-six snapshot and study domain.
 
 ## Run the project
 

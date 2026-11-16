@@ -16,9 +16,9 @@ def main():
     md('''# Wolfcamp oil production forecasting
 ## ML Zoomcamp midterm — an end-to-end regression project
 
-**Current submission: five-model tuning shown inline.** Linear regression, Ridge, Decision Tree, Random Forest and XGBoost each have their own code and results in Section 6.
+**Problem.** Predict the oil produced during months 7–12 of a Wolfcamp well's life using information available after its first six months. This is a supervised regression task: the output is a continuous volume measured in oil barrels (BBL).
 
-**Problem.** After six months of production, estimate how much additional oil a Wolfcamp well will produce during months 7–12. An independent production expectation can support engineering review of operator forecasts. The output is oil barrels (BBL); this model does not directly size an ESP.
+**Purpose.** Early production measurements provide a basis for estimating future oil output. This project tests whether machine learning improves those estimates over simple training-median and recent-production-rate benchmarks. It combines observed oil, gas and water volumes with well dimensions, location and available completion attributes, then delivers the selected model through a reproducible prediction service.
 
 **Target:** `First12MonthOil_BBL − First6MonthOil_BBL`. Add the observed six-month oil to the forecast to obtain cumulative first-year oil. Forecasting the incremental volume keeps the evaluation focused on future production.
 
@@ -460,9 +460,35 @@ python examples/verify_api_parity.py --url http://127.0.0.1:8000
 ```
 Open `http://127.0.0.1:8000/docs`. The runtime image includes the saved model, source and pinned dependencies. In the reference Docker/Linux environment, full-search verification also passes without the platform-differences flag. Windows reruns report nonselected XGBoost differences explicitly while keeping selected-pipeline checks strict. Local Docker verification and clean-copy checks are documented in `VERIFICATION.md`.
 
-## Conclusion and limitations
+## 11. Conclusion
 
-Five regression families were evaluated under the same preprocessing and chronological protocol. Random Forest was selected by training CV and forecasts future incremental oil with historical RMSE 19,158.43 BBL, MAE 13,273.65 BBL and R² 0.6202. The model, API and Docker use the same fitted transforms. Missingness, the regional historical cohort, approximate label maturity, unverified revisions, limited later-year coverage and the reused holdout constrain generalization. Prospective evaluation on later wells is needed before operational use.
+This project delivers an end-to-end machine-learning workflow for forecasting **future incremental oil production** from a well's first six months of measurements. Five regression families were evaluated with the same feature definitions, fold-fitted preprocessing and purged chronological splits. The 49 configurations produced 147 fold fits, making the model-selection decision traceable to recorded results.
+
+**Random Forest was selected by mean training-CV RMSE: 25,623.00 BBL**, compared with 25,981.49 for the best XGBoost configuration in the Docker/Linux reference run. The selected forest uses 240 trees, a minimum leaf size of five and feature sampling of 0.75. After refitting on 1,500 label-mature wells from 2014–19, its evaluation on 264 historical 2020–21 wells gave **RMSE 19,158.43 BBL, MAE 13,273.65 BBL and R² 0.6202**. The R² describes variation explained within this cohort; it is not a percentage-accuracy measure for individual forecasts.
+
+The forest reduced historical-holdout RMSE by **6.72% against the fitted recent-rate benchmark** and **44.50% against the training-median benchmark**. Its MAE was 17.76 BBL higher than the recent-rate benchmark's 13,255.89 BBL, a difference of about 0.13%. The benefit is a lower squared-error aggregate, whose weighting emphasizes larger misses; average absolute error is very similar. Reporting both metrics avoids overstating the benefit of the more complex model.
+
+The fitted forest places its largest impurity-based importances on months 4–6 oil and total first-six-month oil. This is consistent with recent measured production carrying predictive information about subsequent output. These importances describe the fitted model, and correlated predictors prevent interpreting them as independent or causal effects.
+
+The deliverable includes explicit preprocessing visualizations, model-specific tuning code, saved evaluation results, a serialized feature/preprocessing/model pipeline, and a FastAPI service running in Docker. Saved-pipeline/API parity checks establish that the deployed service applies the evaluated transformations and estimator. The resulting model is a reproducible estimate of future oil for the studied population, with the evaluation limits below.
+
+## 12. Limitations and their implications
+
+- **Previously inspected historical holdout.** The 2020–21 cohort was examined during earlier development. Keeping its labels out of this search does not restore an independent untouched test. The reported results are retrospective evidence; a later, genuinely unseen cohort is needed to establish prospective performance.
+- **Restricted population and limited later-year coverage.** The study includes eligible Wolfcamp/Delaware Basin wells within the stated depth/lateral bounds and with available twelve-month outcomes. Of the 264 holdout wells, 247 are from 2020 and only 17 from 2021. Aggregate scores therefore provide limited evidence about 2021, newer operating conditions, other regions or excluded well types. Individual and subgroup performance may differ substantially from the averages.
+- **Incomplete historical availability information.** Completion-date masking and calendar-label purging reduce identifiable timing problems, but actual reporting dates, vendor revisions and complete point-in-time snapshots are unavailable. The study cannot certify that every recorded input and training label existed exactly as shown at the forecast date.
+- **Heavy missingness in some predictors.** FracStages is 90.6% missing in the 2014–18 training cohort. Median filling creates a concentration at the fitted median and compresses that predictor's marginal spread. Missingness flags preserve the distinction between observed and filled values, but cannot recover the lost measurements. The before/after figures document this effect; they do not establish the accuracy of unknown-value reconstruction.
+- **Finite search and uncertain ranking.** Each tunable family received twelve configurations. The forest's mean-CV lead over XGBoost is about 1.38%, and no repeated-seed study or uncertainty interval establishes that this ranking is statistically reliable. The conclusion applies to the tested searches and protocol, rather than all possible configurations of these algorithms.
+- **Point predictions and unmeasured error variation.** RMSE and MAE summarize errors across the cohort. The service supplies no calibrated prediction interval, and error by location, production band, missingness pattern and other subgroups has not been validated comprehensively. A single forecast should not be treated as a guaranteed production volume.
+- **Platform-dependent XGBoost results.** Twelve XGBoost trial scores differed between Windows and Linux despite the recorded package versions and seeds. Both runs selected the same forest and reproduced its final metrics/predictions, but the nonselected-family scores are not interchangeable. The published notebook and tuning tables use Docker/Linux; both observed runs remain documented.
+- **Forecast-time input contract.** The model is conditional on six months of observed production and the defined study domain. API type checks and fitted imputation allow incomplete requests to be processed, but do not establish that a supplied snapshot is historically valid or representative of the training population. Performance under changed input distributions has not been established.
+
+## 13. Next steps
+
+1. **Evaluate on newly collected later wells before further model selection.** Freeze the current pipeline and use independently held-out outcomes with dated input snapshots and reporting timestamps. This would test prospective generalization directly.
+2. **Improve input completeness and availability checks.** Audit missing completion records, source revisions and forecast-time metadata. Reassess sparse predictors and missingness-sensitive performance using training-only experiments followed by independent evaluation.
+3. **Measure reliability beyond aggregate scores.** Report errors by year, location, production range and missingness pattern with sample counts and uncertainty estimates; develop and validate prediction intervals.
+4. **Check model-selection stability and deployment drift.** Repeat the declared searches across seeds in a fixed environment, resolve the XGBoost reproducibility differences, and monitor input distributions and realized errors as later outcomes become available.
 
 AI assisted implementation, documentation and review; the author remains responsible for the decisions and results.''')
     notebook=nbf.v4.new_notebook(cells=cells,metadata={'kernelspec':{'display_name':'Python 3','language':'python','name':'python3'}})
