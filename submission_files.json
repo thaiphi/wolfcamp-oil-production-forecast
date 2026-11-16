@@ -33,7 +33,11 @@
   },
   {
     "path": "docs/render-deployment.md",
-    "sha256": "4444f36553c4c5d41da906151aa65bf79b77a23e4a2937d01dc4beddaa3aade9"
+    "sha256": "355f824abc19cfe9d2206ee0deb211977d67ded606104fcdf65b2256ba93b7bd"
+  },
+  {
+    "path": "docs/render-prediction.png",
+    "sha256": "8ea558fdc7321bdcfaf2ad78644cf8e5055b28aeb8c645a7956a364555fddcd0"
   },
   {
     "path": "examples/call_api.py",
@@ -69,7 +73,7 @@
   },
   {
     "path": "prepare_submission.py",
-    "sha256": "60d8f1fbc7a546bdada9d93421558835cd6f23079ea5b25e11672f8bad7c7c7a"
+    "sha256": "f89337e1877743547836e5d84319b7474efb4e7914d543aa4ece91449416a93e"
   },
   {
     "path": "provenance.json",
@@ -81,7 +85,7 @@
   },
   {
     "path": "README.md",
-    "sha256": "72a66525f328c5820d2450167e472918ee6cd8f3b931b9acdc0855d407c019db"
+    "sha256": "0fb51c54180b86f993d1ca54f186b91e6407270fb45478e12e98aaa90eec8c2c"
   },
   {
     "path": "render.yaml",
@@ -252,8 +256,16 @@
     "sha256": "5a1d4ff3405a2d6304ee27236243c1dfb57408d4fb8b80c9a825325948c61e78"
   },
   {
+    "path": "reports/verification/render_deployment.json",
+    "sha256": "0d075f12e209c4b50e2dcd56fb608f899293af098da4f0260349a329c001ba6c"
+  },
+  {
+    "path": "reports/verification/render_http.json",
+    "sha256": "8416df14a97889c33b2087562e35f4144f072df0f2a9f78f6d754c6a9ebea8a8"
+  },
+  {
     "path": "reports/verification/render_local.json",
-    "sha256": "63dfe41aeb3328a45e54ad6de8e5fd0c78a06e1da64bba5b8a7367b257348538"
+    "sha256": "79fceaa6cb87f8dadc9c54e24e628c3d42c123345e1c767df4af4dd6323b0836"
   },
   {
     "path": "reports/verification/render_local_http.json",
@@ -261,6 +273,10 @@
   },
   {
     "path": "reports/verification/render_local_parity.json",
+    "sha256": "c456dd7786170ce62f8f28a40a77e42b2077e4ca83f2b915807ea31c8b3160ff"
+  },
+  {
+    "path": "reports/verification/render_parity.json",
     "sha256": "c456dd7786170ce62f8f28a40a77e42b2077e4ca83f2b915807ea31c8b3160ff"
   },
   {
@@ -337,7 +353,7 @@
   },
   {
     "path": "SUBMISSION.md",
-    "sha256": "b1a2cb8a631e7e70faac3be8d09b7fb827ac3b68c6a04024db9f9452ed5f3889"
+    "sha256": "9d7dff504d5d00a1b7f8d922e257467daff4a6b460c73c294fc2bad894c1690a"
   },
   {
     "path": "tests/test_api.py",
@@ -361,7 +377,7 @@
   },
   {
     "path": "VERIFICATION.md",
-    "sha256": "bab64a0ad838d3255921611b42f03942c235ac5e607273d1e5f0cabdec02af10"
+    "sha256": "6ec8a9d550845eb654f8b0325b8ccd5dd38cca05cf64fb75fe53919eb679a5ce"
   },
   {
     "path": "verify_project.py",

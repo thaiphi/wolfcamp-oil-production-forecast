@@ -7,15 +7,21 @@ This project has its own executable training workflow, dataset, saved pipeline, 
 `render.yaml` selects Docker, Free compute, port 10000 and `/health`.
 The updated Docker image passed 14 HTTP checks and five saved-model prediction
 parity cases locally with a 512 MiB memory limit, no additional swap and a
-0.5 CPU limit. Observed memory after the checks was 128.2 MiB, with no OOM kill.
+0.1 CPU limit (rechecked after the initial 0.5 CPU run). Observed memory after
+the initial checks was 128.2 MiB, with no OOM kill.
 The default port 8000 health check also passed. These are local measurements,
 not a guarantee about Render performance or remote deployment success.
 
 All 20 automated tests and 11 protected-artifact checks passed again.
 The YAML parse check passed after quoting the `off` value explicitly.
 See `reports/verification/render_local.json`, `render_local_http.json` and
-`render_local_parity.json`. Render account authorization and remote tests are
-pending; cloud deployment is not claimed. Setup and public-endpoint test commands
+`render_local_parity.json`. The Render dashboard confirmed **Live**, Docker,
+Free compute and deployed commit `a6a6899439da8f92cc9fd40c4c4bcdcfa2562a2a`.
+The actual public service passed all 14 HTTP checks and five model-parity checks:
+[try the hosted API](https://wolfcamp-oil-production-forecast.onrender.com/docs).
+Remote results are in `render_deployment.json`, `render_http.json` and
+`render_parity.json` in `reports/verification/`, with a real HTTP 200 screenshot
+at [docs/render-prediction.png](docs/render-prediction.png). Setup and test commands
 are in [docs/render-deployment.md](docs/render-deployment.md).
 
 ## Training and saved results
@@ -65,4 +71,4 @@ Non-failing environment warnings may include Starlette/AnyIO's deprecation and W
 
 ## Interpretation limits
 
-The historical holdout was inspected during development. Calendar-label maturity is approximate; source revision history and exact reporting availability are not established. Caller-supplied snapshots must obey the month-six availability rules and study domain. Local Docker verification is established; prospective validation and cloud deployment are not claimed. The submission repository is `https://github.com/thaiphi/wolfcamp-oil-production-forecast`; submit its reviewed commit through the course portal. Portal submission has not been performed by this preparation task.
+The historical holdout was inspected during development. Calendar-label maturity is approximate; source revision history and exact reporting availability are not established. Caller-supplied snapshots must obey the month-six availability rules and study domain. Local Docker and live Render serving are verified; prospective validation is not claimed. The submission repository is `https://github.com/thaiphi/wolfcamp-oil-production-forecast`; submit its reviewed commit through the course portal. Portal submission has not been performed by this preparation task.

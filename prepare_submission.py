@@ -16,7 +16,7 @@ def files_to_package():
            'notebooks/wolfcamp_midterm_submission.ipynb',
            'reports/metrics.json','reports/tuning.json','reports/tuning.csv','reports/model_selection.csv',
            'reports/selection.json','reports/MODEL_SELECTION_PROTOCOL.md','scripts/Dockerfile.tests',
-           'docs/docker-prediction.png','reports/platform_reproducibility.json']
+           'docs/docker-prediction.png','docs/render-prediction.png','reports/platform_reproducibility.json']
     files=[ROOT/name for name in names]
     for directory in ['src','tests','examples','scripts']:
         files += [p for p in (ROOT/directory).rglob('*') if p.is_file() and p.suffix in ['.py','.json'] and '__pycache__' not in p.parts]

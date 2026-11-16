@@ -7,7 +7,7 @@
   "default_port_health": "PASS: container port 8000",
   "memory_limit_mib": 512,
   "swap_limit_mib": 512,
-  "cpu_limit": 0.5,
+  "cpu_limit": 0.1,
   "observed_memory_mib": 128.2,
   "oom_killed": false,
   "http_checks_passed": 14,
@@ -15,6 +15,6 @@
   "pytest_tests_passed": 20,
   "protected_artifacts_verified": 11,
   "yaml_parse": "PASS after quoting off string; initial unquoted YAML 1.1 parse failed",
-  "render_platform_validation": "NOT RUN: account authorization pending",
-  "cloud_status": "NOT DEPLOYED"
+  "render_platform_validation": "Service created through Render dashboard using matching settings; Blueprint platform validation not run",
+  "cloud_status": "LIVE: see render_deployment.json for separate remote evidence"
 }

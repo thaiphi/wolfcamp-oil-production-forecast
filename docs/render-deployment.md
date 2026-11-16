@@ -7,9 +7,19 @@ model-loading `/health` check. Local Docker still defaults to port 8000.
 
 ## Deployment status
 
-Deployment configuration is supplied. A live cloud URL and successful remote
-prediction are not claimed until the deployment has been created and tested.
-Local verification evidence is in `reports/verification/render_local.json`.
+**Live:** https://wolfcamp-oil-production-forecast.onrender.com/docs
+
+The service was created from the public Git repository on Render's Free plan
+with the settings below. Deployed source commit:
+`a6a6899439da8f92cc9fd40c4c4bcdcfa2562a2a`. Automatic deploys are off; later
+documentation/evidence commits do not change the running model service.
+No payment method was added. All 14 remote HTTP cases and five saved-model
+prediction parity checks passed. Remote evidence is in
+`reports/verification/render_deployment.json`, `render_http.json` and
+`render_parity.json`. See [the actual HTTP 200 screenshot](render-prediction.png).
+It uses the minimal six-month-oil input, while the full-feature example in
+`examples/request.json` produces a different prediction as expected.
+Local resource-limit verification is in `reports/verification/render_local.json`.
 
 ## Create the service
 
@@ -40,7 +50,7 @@ the browser and wait for `{"status":"ok"}` before running the checks. From the
 project root in PowerShell, replace the example URL with the actual assigned URL:
 
 ```powershell
-$wolfcampUrl = 'https://YOUR-ACTUAL-SERVICE.onrender.com'
+$wolfcampUrl = 'https://wolfcamp-oil-production-forecast.onrender.com'
 .\.venv\Scripts\python.exe examples/smoke_api.py --url $wolfcampUrl --output reports/verification/render_http.json
 .\.venv\Scripts\python.exe examples/verify_api_parity.py --url $wolfcampUrl --output reports/verification/render_parity.json
 ```

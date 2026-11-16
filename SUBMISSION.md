@@ -6,7 +6,7 @@
 - Prediction service, pinned dependencies, Dockerfile and automated tests are included.
 - A real Docker API request/response screenshot is included in `docs/docker-prediction.png`.
 - Verification results and reproduction commands are in `VERIFICATION.md` and `README.md`.
-- Optional Render Free deployment configuration and instructions are included. Cloud deployment requires an actual live URL and remote checks; local Render-style Docker checks are recorded separately.
+- Render Free deployment is live at https://wolfcamp-oil-production-forecast.onrender.com/docs. Fourteen remote HTTP checks and five model-parity checks passed; configuration, instructions, JSON evidence and an actual prediction screenshot are included. Free hosting may take about a minute to wake after inactivity.
 
 Run `python prepare_submission.py` to create the upload folder and ZIP. Use the **contents** of `dist/wolfcamp-midterm-submission/` as the GitHub repository root, including dotfiles. Environments, caches and duplicate training runs are excluded.
 

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-11-16T22:12:07.632134+00:00",
+  "provider": "Render",
+  "plan": "Free",
+  "monthly_compute_price_usd": 0,
+  "url": "https://wolfcamp-oil-production-forecast.onrender.com",
+  "docs_url": "https://wolfcamp-oil-production-forecast.onrender.com/docs",
+  "deployed_commit": "a6a6899439da8f92cc9fd40c4c4bcdcfa2562a2a",
+  "service_id": "srv-dbtnu21srm7s73dh0vig",
+  "deploy_id": "dep-dbtnu29srm7s73dh10bg",
+  "dashboard_status": "Live",
+  "runtime": "Docker",
+  "region": "oregon",
+  "port": 10000,
+  "health_check_path": "/health",
+  "auto_deploy": "off",
+  "http_checks_passed": 14,
+  "prediction_parity_checks_passed": 5,
+  "parity_tolerance_bbl": 0.01,
+  "example_full_input_response": {
+    "predicted_months_7_to_12_oil_bbl": 56052.42,
+    "predicted_12_month_cumulative_oil_bbl": 117332.42,
+    "actual_first_6_month_oil_bbl": 61280.0
+  },
+  "screenshot": "docs/render-prediction.png",
+  "source": "Public Git repository; no repository installation needed",
+  "payment_method_added": false,
+  "limitations": "Free service sleeps after inactivity; first request may take about a minute."
+}

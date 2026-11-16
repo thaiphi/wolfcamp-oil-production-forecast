@@ -122,7 +122,16 @@ using Docker on Render's **Free** compute plan. Follow the
 The container accepts Render's `PORT` environment variable and keeps port 8000
 as its local default. No retraining, database or persistent disk is required.
 
-Cloud configuration is prepared; a running public endpoint is not yet claimed.
+**Live prediction API:** [Open Swagger and try a prediction](https://wolfcamp-oil-production-forecast.onrender.com/docs).
+[Health check](https://wolfcamp-oil-production-forecast.onrender.com/health).
+The Free Docker service was deployed from commit
+`a6a6899439da8f92cc9fd40c4c4bcdcfa2562a2a`. All 14 remote HTTP checks and five
+saved-model prediction parity checks passed. Evidence is in
+[reports/verification/render_deployment.json](reports/verification/render_deployment.json)
+and the [actual hosted HTTP 200 prediction screenshot](docs/render-prediction.png).
+The screenshot uses a minimal input; the full `examples/request.json` has more
+observed features and therefore returns a different prediction.
+
 Free services sleep after 15 idle minutes, so reviewers may need to wait about a
 minute for the first request. The local Docker workflow above remains available.
 
