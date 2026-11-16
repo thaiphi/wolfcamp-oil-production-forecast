@@ -1,0 +1,48 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Wolfcamp · From well data to oil forecasts",
+    "locale": "en",
+    "legend": {"entries": {"backend": {"label": "Processing"}, "database": {"label": "Data / saved model"}, "cloud": {"label": "Hosted API"}, "frontend": {"label": "Prediction output"}}},
+    "quality_profile": "showcase",
+    "output": ".archify/workflow-wolfcamp-20261116-162000/wolfcamp-workflow.html"
+  },
+  "lanes": [
+    {"id": "prepare", "label": "Explore & prepare"},
+    {"id": "learn", "label": "Train & evaluate offline"},
+    {"id": "serve", "label": "Deploy & predict online"}
+  ],
+  "nodes": [
+    {"id":"data","lane":"prepare","col":0,"type":"database","label":"Well data","sublabel":"Historical Wolfcamp CSV","tag":"Month-six information"},
+    {"id":"explore","lane":"prepare","col":1,"type":"backend","label":"Explore","sublabel":"Target, gaps, correlations"},
+    {"id":"split","lane":"prepare","col":2,"type":"backend","label":"Split by time","sublabel":"Train / validate / holdout","tag":"Purge immature labels"},
+    {"id":"preprocess","lane":"prepare","col":3,"type":"backend","label":"Preprocess","sublabel":"Impute, scale, encode","tag":"Fit within training folds"},
+    {"id":"tune","lane":"learn","col":3,"type":"backend","label":"Train & tune","sublabel":"Five regression families","tag":"49 trials · 147 fold fits"},
+    {"id":"select","lane":"learn","col":2,"type":"backend","label":"Select forest","sublabel":"Lowest training-CV RMSE","tag":"2019 validation diagnostics"},
+    {"id":"evaluate","lane":"learn","col":1,"type":"backend","label":"Refit & evaluate","sublabel":"Holdout RMSE, MAE, R²","tag":"Two forecasting benchmarks"},
+    {"id":"artifact","lane":"learn","col":0,"type":"database","label":"Save pipeline","sublabel":"models/model.joblib","tag":"Preprocessing + forest"},
+    {"id":"api","lane":"serve","col":0,"type":"backend","label":"FastAPI","sublabel":"Validate inputs; load model","tag":"POST /predict"},
+    {"id":"docker","lane":"serve","col":1,"type":"backend","label":"Docker","sublabel":"Package the prediction API","tag":"Reproducible runtime"},
+    {"id":"cloud","lane":"serve","col":2,"type":"cloud","label":"Render Free","sublabel":"Public HTTPS prediction API","tag":"Swagger + health check"},
+    {"id":"forecast","lane":"serve","col":3,"type":"frontend","label":"Oil forecast","sublabel":"Months 7–12 oil, in BBL","tag":"Add six-month oil for year 1"}
+  ],
+  "edges": [
+    {"from":"data","to":"explore"},
+    {"from":"explore","to":"split"},
+    {"from":"split","to":"preprocess"},
+    {"from":"preprocess","to":"tune"},
+    {"from":"tune","to":"select"},
+    {"from":"select","to":"evaluate"},
+    {"from":"evaluate","to":"artifact"},
+    {"from":"artifact","to":"api"},
+    {"from":"api","to":"docker"},
+    {"from":"docker","to":"cloud"},
+    {"from":"cloud","to":"forecast"}
+  ],
+  "cards": [
+    {"dot":"cyan","title":"Prediction question","items":["After six months, how much additional oil will this well produce in months 7–12?"]},
+    {"dot":"emerald","title":"Verified serving","items":["14 live HTTP checks and 5 model-parity cases passed. The cloud API uses the saved pipeline."]},
+    {"dot":"amber","title":"Evidence boundary","items":["The historical holdout was inspected during development. Prospective performance remains unverified."]}
+  ]
+}

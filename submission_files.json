@@ -9,7 +9,7 @@
   },
   {
     "path": ".gitignore",
-    "sha256": "9187a968933f8d7ba44fc47d2880de4892bbcf742fbb54faf97b180abea23090"
+    "sha256": "18e4ff4cfb81befe1c674ffaa5e704d34fd10f0661da4843ceff42f5919eefce"
   },
   {
     "path": "artifact_manifest.json",
@@ -28,6 +28,14 @@
     "sha256": "b575edda72b0a35e268f66a63c115c5f8336c56ecf491c04287931b242a01065"
   },
   {
+    "path": "docs/archify-LICENSE-MIT.txt",
+    "sha256": "b799ab081703e7821ae5096d2c1abdf14bbdc75e8ea1c4045998c36ed6db9706"
+  },
+  {
+    "path": "docs/archify-LICENSE.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
     "path": "docs/docker-prediction.png",
     "sha256": "8a976cc6cc849ff64c4512b25b57ea98bd66ce8d4db7389f7f3fdd8326e2748e"
   },
@@ -38,6 +46,18 @@
   {
     "path": "docs/render-prediction.png",
     "sha256": "8ea558fdc7321bdcfaf2ad78644cf8e5055b28aeb8c645a7956a364555fddcd0"
+  },
+  {
+    "path": "docs/workflow.archify.json",
+    "sha256": "9abd1b0e8622ae368e6dbbfed5b19257e412fbd4365b2e1ba09b698a22d39bf7"
+  },
+  {
+    "path": "docs/workflow.html",
+    "sha256": "6c9fc605c46a99a147403b421ece2a7da3e9f2c9cca0266a7cdd9941a33e1177"
+  },
+  {
+    "path": "docs/workflow.svg",
+    "sha256": "d8d2d380ae17cb3b179809a0a7c9993bb5d1ce007f73b41ad9b56da54ea2a57f"
   },
   {
     "path": "examples/call_api.py",
@@ -73,7 +93,7 @@
   },
   {
     "path": "prepare_submission.py",
-    "sha256": "f89337e1877743547836e5d84319b7474efb4e7914d543aa4ece91449416a93e"
+    "sha256": "cdfad7eb41cc280b9c58e02a215a0b859ba3077d91f0d53046ad176d97b6ad55"
   },
   {
     "path": "provenance.json",
@@ -85,7 +105,7 @@
   },
   {
     "path": "README.md",
-    "sha256": "313abefcc37cbbf308c391c89ab7c54fca835a493b649b317456151b122ab708"
+    "sha256": "7999754b59c7221661fd4577e0f3d82fd467d4216c675730ea4423786f1fcd55"
   },
   {
     "path": "render.yaml",
@@ -298,6 +318,10 @@
   {
     "path": "reports/verification/windows_training_parity.log",
     "sha256": "7bd9697e4dd27c2a47a90ae20e0d8c11ce9909cb8de2a3754c0cf1f363b29c40"
+  },
+  {
+    "path": "reports/verification/workflow_diagram.json",
+    "sha256": "16c6268a81262ca90b22593e6ae2e55f83e92d3ae81424bb86c9f34cb72313a4"
   },
   {
     "path": "requirements-dev.txt",

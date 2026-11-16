@@ -1,4 +1,5 @@
 .venv/
+.archify/
 .verify-env/
 __pycache__/
 *.pyc

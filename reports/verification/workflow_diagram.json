@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "tool": "Archify 3.2.0",
+  "diagram_type": "workflow",
+  "basis": "Redesigned from the README workflow description; no runtime profiling inferred",
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "visual_review": "Inspected light 1440x900 and dark 2048x1320 captures after final label revisions",
+  "svg_sha256": "d8d2d380ae17cb3b179809a0a7c9993bb5d1ce007f73b41ad9b56da54ea2a57f",
+  "html_sha256": "6c9fc605c46a99a147403b421ece2a7da3e9f2c9cca0266a7cdd9941a33e1177",
+  "dark_light_svg": true,
+  "original_results_changed": false
+}
