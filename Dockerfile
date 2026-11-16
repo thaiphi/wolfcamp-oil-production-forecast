@@ -8,4 +8,4 @@ COPY src ./src
 COPY predict.py .
 COPY models/model.joblib ./models/model.joblib
 EXPOSE 8000
-CMD ["uvicorn", "predict:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "exec uvicorn predict:app --host 0.0.0.0 --port ${PORT:-8000} --workers 1"]

@@ -25,11 +25,15 @@
   },
   {
     "path": "Dockerfile",
-    "sha256": "113eb4708fd967ed9b56fc1030b16435ad671c13f4dd1a5f5d1c3a85b1814085"
+    "sha256": "b575edda72b0a35e268f66a63c115c5f8336c56ecf491c04287931b242a01065"
   },
   {
     "path": "docs/docker-prediction.png",
     "sha256": "8a976cc6cc849ff64c4512b25b57ea98bd66ce8d4db7389f7f3fdd8326e2748e"
+  },
+  {
+    "path": "docs/render-deployment.md",
+    "sha256": "4444f36553c4c5d41da906151aa65bf79b77a23e4a2937d01dc4beddaa3aade9"
   },
   {
     "path": "examples/call_api.py",
@@ -65,7 +69,7 @@
   },
   {
     "path": "prepare_submission.py",
-    "sha256": "d28aed6c8b6099a6a5a2b1e8555ab35f03637d8cf4087e2d15baac821b45263c"
+    "sha256": "60d8f1fbc7a546bdada9d93421558835cd6f23079ea5b25e11672f8bad7c7c7a"
   },
   {
     "path": "provenance.json",
@@ -77,7 +81,11 @@
   },
   {
     "path": "README.md",
-    "sha256": "faf6d368aaa8c180484029df9c89bc18b999f2ec94f01456667355620f328454"
+    "sha256": "72a66525f328c5820d2450167e472918ee6cd8f3b931b9acdc0855d407c019db"
+  },
+  {
+    "path": "render.yaml",
+    "sha256": "20d3d525218105c12b2e8768ab211110411c100dad041d5d8ee0e26e93f736c0"
   },
   {
     "path": "reports/metrics.json",
@@ -244,6 +252,18 @@
     "sha256": "5a1d4ff3405a2d6304ee27236243c1dfb57408d4fb8b80c9a825325948c61e78"
   },
   {
+    "path": "reports/verification/render_local.json",
+    "sha256": "63dfe41aeb3328a45e54ad6de8e5fd0c78a06e1da64bba5b8a7367b257348538"
+  },
+  {
+    "path": "reports/verification/render_local_http.json",
+    "sha256": "37dc29e418a08c8436bf43ed169df532ba4408925b732efae45bc89680a238d3"
+  },
+  {
+    "path": "reports/verification/render_local_parity.json",
+    "sha256": "c456dd7786170ce62f8f28a40a77e42b2077e4ca83f2b915807ea31c8b3160ff"
+  },
+  {
     "path": "reports/verification/summary.json",
     "sha256": "aea3edd17a11d380e57618b7ff75516b493595e561933e18e93a810751492054"
   },
@@ -317,7 +337,7 @@
   },
   {
     "path": "SUBMISSION.md",
-    "sha256": "2676b51ea76b16f66f0e117948f743575eb4ba32ba31e189244f68cdfcbacb07"
+    "sha256": "b1a2cb8a631e7e70faac3be8d09b7fb827ac3b68c6a04024db9f9452ed5f3889"
   },
   {
     "path": "tests/test_api.py",
@@ -341,7 +361,7 @@
   },
   {
     "path": "VERIFICATION.md",
-    "sha256": "68cd57e3508456d726d10123860953324052a7fa2fddcd3eb459a498695bd80d"
+    "sha256": "bab64a0ad838d3255921611b42f03942c235ac5e607273d1e5f0cabdec02af10"
   },
   {
     "path": "verify_project.py",

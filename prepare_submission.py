@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parent
 
 def files_to_package():
     names=['README.md','SUBMISSION.md','VERIFICATION.md','train.py','predict.py','verify_project.py',
-           'prepare_submission.py','requirements.txt','requirements-dev.txt','Dockerfile','pytest.ini',
+           'prepare_submission.py','requirements.txt','requirements-dev.txt','Dockerfile','render.yaml','docs/render-deployment.md','pytest.ini',
            '.gitignore','.dockerignore','.gitattributes','artifact_manifest.json','provenance.json',
            'data/raw/wolfcamp_wells.csv','data/raw/README.md','models/model.joblib','notebooks/notebook.ipynb',
            'notebooks/wolfcamp_midterm_submission.ipynb',

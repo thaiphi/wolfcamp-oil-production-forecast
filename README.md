@@ -114,6 +114,18 @@ Reviewer evidence: [actual Docker API request and HTTP 200 prediction](docs/dock
 
 A full request is in [examples/request.json](examples/request.json). Optional fields may be omitted/null and use fitted imputation. Future/unknown fields, negative production and invalid types are rejected. Supply only month-six values and omit completion attributes whose dates are unknown or later than month six; the API cannot verify dates or vendor revisions. `MODEL_PATH` can point to a retrained artifact.
 
+## Optional cloud deployment: Render
+
+The root [render.yaml](render.yaml) deploys this same saved-model FastAPI service
+using Docker on Render's **Free** compute plan. Follow the
+[deployment and remote verification instructions](docs/render-deployment.md).
+The container accepts Render's `PORT` environment variable and keeps port 8000
+as its local default. No retraining, database or persistent disk is required.
+
+Cloud configuration is prepared; a running public endpoint is not yet claimed.
+Free services sleep after 15 idle minutes, so reviewers may need to wait about a
+minute for the first request. The local Docker workflow above remains available.
+
 ## Project files
 
 ```text

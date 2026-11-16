@@ -2,6 +2,22 @@
 
 This project has its own executable training workflow, dataset, saved pipeline, notebook and Docker service. Commands below run from the project root with Python 3.12 and `requirements-dev.txt` installed. Evidence is in `reports/verification/`.
 
+## Render configuration verification
+
+`render.yaml` selects Docker, Free compute, port 10000 and `/health`.
+The updated Docker image passed 14 HTTP checks and five saved-model prediction
+parity cases locally with a 512 MiB memory limit, no additional swap and a
+0.5 CPU limit. Observed memory after the checks was 128.2 MiB, with no OOM kill.
+The default port 8000 health check also passed. These are local measurements,
+not a guarantee about Render performance or remote deployment success.
+
+All 20 automated tests and 11 protected-artifact checks passed again.
+The YAML parse check passed after quoting the `off` value explicitly.
+See `reports/verification/render_local.json`, `render_local_http.json` and
+`render_local_parity.json`. Render account authorization and remote tests are
+pending; cloud deployment is not claimed. Setup and public-endpoint test commands
+are in [docs/render-deployment.md](docs/render-deployment.md).
+
 ## Training and saved results
 
 ```text
